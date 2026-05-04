@@ -9,8 +9,7 @@ import { BookGinaInline } from '../components/shared/BookGinaCard'
 import { simulateTyping, streamCompletion } from '../lib/openrouter'
 import { ASK_GINA_SYSTEM_PROMPT } from '../lib/prompts/askGina'
 import { dummyAskGinaResponses } from '../data/dummyHealthScore'
-
-const DEMO_MODE = import.meta.env.VITE_DEMO_MODE === 'true'
+import { isAppDemoMode as DEMO_MODE } from '../lib/runtimeConfig'
 
 const STARTER_PROMPTS = [
   "What should I do about my high payroll costs?",

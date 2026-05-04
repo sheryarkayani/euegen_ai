@@ -5,6 +5,7 @@ import { Eye, EyeOff, ArrowRight, Sparkles } from 'lucide-react'
 import toast from 'react-hot-toast'
 import useAuthStore from '../store/useAuthStore'
 import Button from '../components/ui/Button'
+import { isAppDemoMode } from '../lib/runtimeConfig'
 
 export default function Auth() {
   const navigate = useNavigate()
@@ -141,19 +142,20 @@ export default function Auth() {
             </p>
           </div>
 
-          {/* Demo mode banner */}
-          <div className="mb-6 px-4 py-3 rounded-xl" style={{
-            background: 'rgba(212,168,83,0.08)',
-            border: '1px solid rgba(212,168,83,0.2)',
-          }}>
-            <div className="flex items-center gap-2">
-              <Sparkles size={14} className="text-gold-500" />
-              <p className="text-xs text-gold-400 font-medium">Demo Mode Active</p>
+          {isAppDemoMode && (
+            <div className="mb-6 px-4 py-3 rounded-xl" style={{
+              background: 'rgba(212,168,83,0.08)',
+              border: '1px solid rgba(212,168,83,0.2)',
+            }}>
+              <div className="flex items-center gap-2">
+                <Sparkles size={14} className="text-gold-500" />
+                <p className="text-xs text-gold-700 font-medium">Demo mode (no Supabase required)</p>
+              </div>
+              <p className="text-xs text-gray-600 mt-1">
+                Credentials are pre-filled. Sign in to explore with Lumina Aesthetics demo data.
+              </p>
             </div>
-            <p className="text-xs text-gray-500 mt-1">
-              Credentials are pre-filled. Click sign in to explore with Lumina Aesthetics demo data.
-            </p>
-          </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {mode === 'signup' && (

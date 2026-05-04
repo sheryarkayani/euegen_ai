@@ -7,8 +7,7 @@ import Button from '../components/ui/Button'
 import Badge from '../components/ui/Badge'
 import GinaTyping from '../components/ui/GinaTyping'
 import { simulateTyping } from '../lib/openrouter'
-
-const DEMO_MODE = import.meta.env.VITE_DEMO_MODE === 'true'
+import { isAppDemoMode as DEMO_MODE } from '../lib/runtimeConfig'
 
 const DEMO_SCRIPT = `# Consultation Script — Botox + Filler Consultation
 ## Lumina Aesthetics | Dr. Sarah Chen

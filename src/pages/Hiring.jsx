@@ -7,7 +7,7 @@ import Badge from '../components/ui/Badge'
 import GinaTyping from '../components/ui/GinaTyping'
 import { simulateTyping } from '../lib/openrouter'
 
-const DEMO_MODE = import.meta.env.VITE_DEMO_MODE === 'true'
+import { isAppDemoMode as DEMO_MODE } from '../lib/runtimeConfig'
 
 const DEMO_JOB_DESC = `# Nurse Practitioner — Medical Aesthetics
 ## Lumina Aesthetics | Austin, TX | Full-Time

@@ -11,7 +11,7 @@ import Badge from '../components/ui/Badge'
 import { dummyHealthScoreReport } from '../data/dummyHealthScore'
 import { BENCHMARKS } from '../data/benchmarks'
 
-const DEMO_MODE = import.meta.env.VITE_DEMO_MODE === 'true'
+import { isAppDemoMode as DEMO_MODE } from '../lib/runtimeConfig'
 
 const STEPS = [
   { label: 'Business Basics', fields: ['businessName', 'state', 'yearsInBusiness', 'numLocations', 'numProviders'] },

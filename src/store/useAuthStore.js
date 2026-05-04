@@ -1,7 +1,8 @@
 import { create } from 'zustand'
 import { dummyPractice, dummyOwner } from '../data/dummyPractice'
+import { isAppDemoMode } from '../lib/runtimeConfig'
 
-const isDemoMode = import.meta.env.VITE_DEMO_MODE === 'true'
+const isDemoMode = isAppDemoMode
 
 const useAuthStore = create((set, get) => ({
   user: isDemoMode ? dummyOwner : null,
