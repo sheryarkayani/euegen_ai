@@ -73,7 +73,7 @@ export default function EventPlanner() {
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-2xl bg-gold-500/10 flex items-center justify-center text-2xl">🎉</div>
           <div className="flex-1">
-            <h3 className="font-display font-semibold text-white">Event Planner</h3>
+            <h3 className="font-display font-semibold text-navy-950">Event Planner</h3>
             <div className="flex items-center gap-3 mt-1">
               <div className="flex-1 max-w-xs">
                 <select className="form-input w-full px-3 py-2 rounded-lg text-sm" value={eventType} onChange={e => setEventType(e.target.value)}>
@@ -94,14 +94,14 @@ export default function EventPlanner() {
             return (
               <Card key={si}>
                 <div className="flex items-center justify-between mb-3">
-                  <h4 className="font-semibold text-white text-sm">{section.category}</h4>
+                  <h4 className="font-semibold text-navy-950 text-sm">{section.category}</h4>
                   <Badge variant={secDone === section.items.length ? 'green' : 'gray'} size="xs">{secDone}/{section.items.length}</Badge>
                 </div>
                 <div className="space-y-2">
                   {section.items.map((item, ii) => {
                     const key = `${si}-${ii}`
                     return (
-                      <div key={ii} className="flex items-start gap-2 cursor-pointer p-2 rounded-lg hover:bg-white/3" onClick={() => toggleItem(key)}>
+                      <div key={ii} className="flex items-start gap-2 cursor-pointer p-2 rounded-lg hover:bg-gray-50" onClick={() => toggleItem(key)}>
                         {checked[key] ? <CheckCircle size={15} className="text-green-400 mt-0.5 flex-shrink-0" /> : <Circle size={15} className="text-gray-600 mt-0.5 flex-shrink-0" />}
                         <p className={`text-sm ${checked[key] ? 'line-through text-gray-600' : 'text-gray-300'}`}>{item}</p>
                       </div>
@@ -135,8 +135,8 @@ export default function EventPlanner() {
                   </div>
                 </div>
               ))}
-              <div className="pt-2 border-t border-white/8 flex justify-between items-center">
-                <span className="text-sm font-medium text-white">Total Budget</span>
+              <div className="pt-2 border-t border-gray-200 flex justify-between items-center">
+                <span className="text-sm font-medium text-navy-950">Total Budget</span>
                 <span className="text-gold-500 font-display font-bold">${totalBudget.toLocaleString()}</span>
               </div>
               <p className="text-xs text-gray-600">Target: generate 3–5x budget in bookings from event</p>
@@ -148,8 +148,8 @@ export default function EventPlanner() {
             <CardHeader title="Vendor Contacts" />
             <div className="space-y-3">
               {VENDOR_CONTACTS.map((v, i) => (
-                <div key={i} className="p-2 rounded-lg" style={{ background: 'rgba(255,255,255,0.03)' }}>
-                  <p className="text-xs font-medium text-white">{v.name}</p>
+                <div key={i} className="p-2 rounded-lg" style={{ background: 'rgba(34,29,53,0.05)' }}>
+                  <p className="text-xs font-medium text-navy-950">{v.name}</p>
                   <Badge variant="gray" size="xs">{v.type}</Badge>
                   <p className="text-xs text-gray-500 mt-1">{v.note}</p>
                 </div>

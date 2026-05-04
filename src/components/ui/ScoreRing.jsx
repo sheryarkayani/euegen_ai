@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getScoreColor } from '../../data/benchmarks'
 
 export default function ScoreRing({ score, size = 120, strokeWidth = 10, label, sublabel }) {
@@ -33,7 +33,7 @@ export default function ScoreRing({ score, size = 120, strokeWidth = 10, label, 
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="rgba(255,255,255,0.05)"
+            stroke="rgba(34,29,53,0.08)"
             strokeWidth={strokeWidth}
           />
           <circle
@@ -50,13 +50,13 @@ export default function ScoreRing({ score, size = 120, strokeWidth = 10, label, 
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="font-display font-bold text-white" style={{ fontSize: size * 0.22 }}>
+          <span className="font-display font-bold text-navy-950" style={{ fontSize: size * 0.22 }}>
             {animatedScore}
           </span>
           <span className="text-gray-500" style={{ fontSize: size * 0.09 }}>/ 100</span>
         </div>
       </div>
-      {label && <p className="text-sm font-medium text-white">{label}</p>}
+      {label && <p className="text-sm font-medium text-navy-950">{label}</p>}
       {sublabel && (
         <span className="text-xs px-2 py-0.5 rounded-full" style={{ backgroundColor: `${color}20`, color }}>
           {colorLabel}

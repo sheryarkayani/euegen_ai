@@ -146,7 +146,7 @@ function NavItem({ item, userTier }) {
         <button
           onClick={() => !locked && setExpanded(!expanded)}
           className={`sidebar-item w-full flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-left ${
-            isActive ? 'active' : 'text-gray-400'
+            isActive ? 'active' : 'text-gray-600'
           } ${locked ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
         >
           <div className="flex items-center gap-3">
@@ -180,8 +180,8 @@ function NavItem({ item, userTier }) {
                           ia && !childLocked
                             ? 'text-gold-500 bg-gold-500/8'
                             : childLocked
-                            ? 'text-gray-600 cursor-not-allowed'
-                            : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'
+                            ? 'text-gray-400 cursor-not-allowed'
+                            : 'text-gray-600 hover:text-navy-950 hover:bg-gray-100'
                         }`
                       }
                     >
@@ -216,7 +216,7 @@ function NavItem({ item, userTier }) {
       end={item.path === '/'}
       className={({ isActive: ia }) =>
         `sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${
-          ia ? 'active text-gold-500' : 'text-gray-400'
+          ia ? 'active text-gold-600' : 'text-gray-600'
         }`
       }
     >
@@ -232,27 +232,24 @@ export default function Sidebar() {
   const userTier = user?.tier || 'free'
 
   return (
-    <div className="fixed left-0 top-0 h-full w-60 flex flex-col" style={{
-      background: 'linear-gradient(180deg, #0f0d14 0%, #0c0a0e 100%)',
-      borderRight: '1px solid rgba(255,255,255,0.05)',
-    }}>
+    <div className="fixed left-0 top-0 h-full w-60 flex flex-col bg-white border-r border-gray-200 shadow-sm">
       {/* Logo */}
-      <div className="px-5 py-5 border-b border-white/5">
+      <div className="px-5 py-5 border-b border-gray-200">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl gold-gradient flex items-center justify-center shadow-lg glow-gold">
             <span className="font-display font-bold text-navy-950 text-base">G</span>
           </div>
           <div>
-            <p className="font-display font-bold text-white text-sm leading-tight">Gina's AI</p>
-            <p className="text-xs text-gray-600 leading-tight">Med Spa Intelligence</p>
+            <p className="font-display font-bold text-navy-950 text-sm leading-tight">Gina's AI</p>
+            <p className="text-xs text-gray-500 leading-tight">Med Spa Intelligence</p>
           </div>
         </div>
       </div>
 
       {/* Practice context */}
       {practice && (
-        <div className="px-4 py-3 mx-3 mt-3 rounded-lg bg-gold-500/6 border border-gold-500/12">
-          <p className="text-xs font-medium text-gold-500 truncate">{practice.name}</p>
+        <div className="px-4 py-3 mx-3 mt-3 rounded-lg bg-gold-500/10 border border-gold-500/20">
+          <p className="text-xs font-medium text-gold-700 truncate">{practice.name}</p>
           <p className="text-xs text-gray-600 truncate">{practice.city}, {practice.state}</p>
         </div>
       )}
@@ -269,7 +266,7 @@ export default function Sidebar() {
           to="/settings"
           className={({ isActive }) =>
             `sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${
-              isActive ? 'active text-gold-500' : 'text-gray-400'
+              isActive ? 'active text-gold-600' : 'text-gray-600'
             }`
           }
         >
@@ -279,7 +276,7 @@ export default function Sidebar() {
       </nav>
 
       {/* Book with Gina CTA */}
-      <div className="p-3 border-t border-white/5">
+      <div className="p-3 border-t border-gray-200">
         <a
           href="https://calendly.com/ginaai/consultation"
           target="_blank"
@@ -294,7 +291,7 @@ export default function Sidebar() {
             <Phone size={14} className="text-navy-950" />
           </div>
           <div>
-            <p className="text-xs font-semibold text-gold-500">Book with Gina</p>
+            <p className="text-xs font-semibold text-gold-700">Book with Gina</p>
             <p className="text-xs text-gray-600">1:1 Strategy Session</p>
           </div>
         </a>

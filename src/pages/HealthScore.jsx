@@ -29,19 +29,19 @@ function ProgressBar({ current, total }) {
             <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
               i < current ? 'gold-gradient text-navy-950' :
               i === current ? 'border-2 border-gold-500 text-gold-500' :
-              'bg-white/5 text-gray-600'
+              'bg-gray-100 text-gray-600'
             }`}>
               {i < current ? <CheckCircle size={14} /> : i + 1}
             </div>
             {i < STEPS.length - 1 && (
               <div className="flex-1 h-0.5 w-8 md:w-16 lg:w-24" style={{
-                background: i < current ? 'linear-gradient(90deg,#d4a853,#e8b55a)' : 'rgba(255,255,255,0.08)',
+                background: i < current ? 'linear-gradient(90deg,#d4a853,#e8b55a)' : 'rgba(34,29,53,0.1)',
               }} />
             )}
           </div>
         ))}
       </div>
-      <p className="text-sm text-gray-400">Step {current + 1} of {total}: <span className="text-white">{STEPS[current]?.label}</span></p>
+      <p className="text-sm text-gray-400">Step {current + 1} of {total}: <span className="text-navy-950">{STEPS[current]?.label}</span></p>
     </div>
   )
 }
@@ -163,7 +163,7 @@ function Step3({ data, onChange }) {
           { key: 'hasMembership', label: 'Do you have a membership program?' },
           { key: 'hasFollowUp', label: 'Do you have automated follow-up protocols?' },
         ].map(f => (
-          <div key={f.key} className="p-4 rounded-xl" style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
+          <div key={f.key} className="p-4 rounded-xl" style={{ border: '1px solid rgba(34,29,53,0.1)' }}>
             <p className="text-sm text-gray-300 mb-3">{f.label}</p>
             <div className="flex gap-3">
               {['Yes', 'No'].map(opt => (
@@ -173,7 +173,7 @@ function Step3({ data, onChange }) {
                   className={`flex-1 py-2 rounded-lg text-sm font-medium transition-all ${
                     (data[f.key] === true && opt === 'Yes') || (data[f.key] === false && opt === 'No')
                       ? 'btn-primary text-navy-950'
-                      : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                      : 'bg-gray-100 text-gray-400 hover:bg-gray-100'
                   }`}
                 >
                   {opt}
@@ -226,9 +226,9 @@ function Step4({ data, onChange }) {
               className={`text-left px-4 py-2.5 rounded-xl text-sm transition-all ${
                 data.topChallenge === c
                   ? 'border-gold-500/50 text-gold-500 bg-gold-500/8'
-                  : 'text-gray-400 hover:text-gray-300 hover:bg-white/5'
+                  : 'text-gray-400 hover:text-gray-300 hover:bg-gray-100'
               }`}
-              style={{ border: `1px solid ${data.topChallenge === c ? 'rgba(212,168,83,0.4)' : 'rgba(255,255,255,0.07)'}` }}
+              style={{ border: `1px solid ${data.topChallenge === c ? 'rgba(212,168,83,0.4)' : 'rgba(34,29,53,0.1)'}` }}
             >
               {c}
             </button>
@@ -276,7 +276,7 @@ function ScoreReport({ report }) {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h2 className="font-display text-xl font-bold text-white">{report.practice}</h2>
+          <h2 className="font-display text-xl font-bold text-navy-950">{report.practice}</h2>
           <p className="text-gray-400 text-sm mt-1">Health Score Report · {new Date(report.generatedAt).toLocaleDateString()}</p>
         </div>
         <Button variant="ghost" size="sm" icon={<Download size={14} />} onClick={exportPDF}>
@@ -346,13 +346,13 @@ function ScoreReport({ report }) {
                 <AlertTriangle size={16} style={{ color: severityColor[flag.severity], marginTop: 2 }} />
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <p className="text-sm font-semibold text-white">{flag.flag}</p>
+                    <p className="text-sm font-semibold text-navy-950">{flag.flag}</p>
                     <Badge variant={flag.severity === 'critical' ? 'red' : flag.severity === 'warning' ? 'amber' : 'blue'} size="xs">
                       {flag.severity}
                     </Badge>
                   </div>
                   <p className="text-sm text-gray-400 leading-relaxed mb-2">{flag.detail}</p>
-                  <div className="flex items-start gap-2 p-3 rounded-lg" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                  <div className="flex items-start gap-2 p-3 rounded-lg" style={{ background: 'rgba(34,29,53,0.06)' }}>
                     <CheckCircle size={13} className="text-gold-500 mt-0.5 flex-shrink-0" />
                     <p className="text-xs text-gray-300">{flag.action}</p>
                   </div>
@@ -368,12 +368,12 @@ function ScoreReport({ report }) {
         <CardHeader title="90-Day Action Plan" icon={CheckCircle} />
         <div className="space-y-4">
           {report.actionPlan.map((phase, i) => (
-            <div key={i} className="p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <div key={i} className="p-4 rounded-xl" style={{ background: 'rgba(34,29,53,0.05)', border: '1px solid rgba(34,29,53,0.08)' }}>
               <div className="flex items-center gap-3 mb-3">
                 <Badge variant={phase.priority === 'critical' ? 'red' : phase.priority === 'high' ? 'amber' : 'gold'} size="sm">
                   Week {phase.week}
                 </Badge>
-                <h4 className="font-semibold text-white text-sm">{phase.title}</h4>
+                <h4 className="font-semibold text-navy-950 text-sm">{phase.title}</h4>
               </div>
               <ul className="space-y-2">
                 {phase.actions.map((action, j) => (

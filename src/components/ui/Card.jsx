@@ -34,7 +34,7 @@ export function CardHeader({ title, subtitle, action, icon: Icon }) {
           </div>
         )}
         <div>
-          <h3 className="font-display font-semibold text-white text-base">{title}</h3>
+          <h3 className="font-display font-semibold text-navy-950 text-base">{title}</h3>
           {subtitle && <p className="text-xs text-gray-500 mt-0.5">{subtitle}</p>}
         </div>
       </div>

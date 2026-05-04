@@ -14,7 +14,7 @@ export default function BenchmarkBar({ label, value, unit = '%', bands, userValu
       <div className="flex items-center justify-between">
         <span className="text-sm text-gray-400">{label}</span>
         <div className="flex items-center gap-2">
-          <span className="text-sm font-semibold text-white">
+          <span className="text-sm font-semibold text-navy-950">
             {displayValue}{unit}
           </span>
           {userBand && (

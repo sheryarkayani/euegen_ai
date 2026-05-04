@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Send, Sparkles, RefreshCw } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import toast from 'react-hot-toast'
@@ -41,8 +41,8 @@ function MessageBubble({ message }) {
     >
       {!isUser && <GinaAvatar />}
       {isUser && (
-        <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-          <span className="text-xs font-medium text-gray-300">You</span>
+        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
+          <span className="text-xs font-medium text-navy-950">You</span>
         </div>
       )}
       <div className={`max-w-2xl ${isUser ? 'items-end' : 'items-start'} flex flex-col`}>
@@ -52,15 +52,15 @@ function MessageBubble({ message }) {
           }`}
         >
           {isUser ? (
-            <p className="text-gray-200">{message.content}</p>
+            <p className="text-gray-800">{message.content}</p>
           ) : (
-            <div className="prose prose-invert prose-sm max-w-none text-gray-200">
+            <div className="prose prose-sm prose-stone max-w-none text-gray-800">
               <ReactMarkdown
                 components={{
                   p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
-                  strong: ({ children }) => <strong className="text-gold-400 font-semibold">{children}</strong>,
+                  strong: ({ children }) => <strong className="text-gold-700 font-semibold">{children}</strong>,
                   ul: ({ children }) => <ul className="my-2 space-y-1">{children}</ul>,
-                  li: ({ children }) => <li className="flex gap-2 text-gray-300"><span className="text-gold-500 mt-1">·</span><span>{children}</span></li>,
+                  li: ({ children }) => <li className="flex gap-2 text-gray-700"><span className="text-gold-600 mt-1">·</span><span>{children}</span></li>,
                 }}
               >
                 {message.content}
@@ -126,8 +126,6 @@ export default function AskGina() {
 
     // Real API call
     try {
-      const { ASK_GINA_SYSTEM_PROMPT } = await import('../lib/prompts/askGina')
-      const { streamCompletion } = await import('../lib/openrouter')
       await streamCompletion({
         systemPrompt: ASK_GINA_SYSTEM_PROMPT,
         messages: [...messages, userMsg].map(m => ({ role: m.role, content: m.content })),
@@ -159,8 +157,8 @@ export default function AskGina() {
           <div className="w-20 h-20 rounded-2xl gold-gradient flex items-center justify-center shadow-2xl glow-gold-strong mb-6">
             <span className="font-display font-bold text-navy-950 text-3xl">G</span>
           </div>
-          <h2 className="font-display text-2xl font-bold text-white mb-2">Ask Gina Anything</h2>
-          <p className="text-gray-400 max-w-md leading-relaxed mb-8 text-sm">
+          <h2 className="font-display text-2xl font-bold text-navy-950 mb-2">Ask Gina Anything</h2>
+          <p className="text-gray-600 max-w-md leading-relaxed mb-8 text-sm">
             20 years of med spa expertise, available 24/7. Ask about payroll, 
             hiring, marketing, sales scripts, compliance — or anything else on your mind.
           </p>
@@ -173,13 +171,13 @@ export default function AskGina() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + i * 0.08 }}
                 onClick={() => sendMessage(prompt)}
-                className="text-left px-4 py-3 rounded-xl text-sm text-gray-300 transition-all duration-200 hover:text-white"
+                className="text-left px-4 py-3 rounded-xl text-sm text-gray-700 transition-all duration-200 hover:text-navy-950"
                 style={{
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.07)',
+                  background: 'rgba(34,29,53,0.05)',
+                  border: '1px solid rgba(34,29,53,0.1)',
                 }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(212,168,83,0.3)'}
-                onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'}
+                onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(34,29,53,0.1)'}
               >
                 <Sparkles size={13} className="inline mr-2 text-gold-500 opacity-70" />
                 {prompt}
@@ -206,13 +204,13 @@ export default function AskGina() {
               <GinaAvatar />
               <div className="max-w-2xl">
                 <div className="chat-message-gina rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed">
-                  <div className="prose prose-invert prose-sm max-w-none text-gray-200">
+                  <div className="prose prose-sm prose-stone max-w-none text-gray-800">
                     <ReactMarkdown
                       components={{
                         p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
-                        strong: ({ children }) => <strong className="text-gold-400 font-semibold">{children}</strong>,
+                        strong: ({ children }) => <strong className="text-gold-700 font-semibold">{children}</strong>,
                         ul: ({ children }) => <ul className="my-2 space-y-1">{children}</ul>,
-                        li: ({ children }) => <li className="flex gap-2 text-gray-300"><span className="text-gold-500 mt-1">·</span><span>{children}</span></li>,
+                        li: ({ children }) => <li className="flex gap-2 text-gray-700"><span className="text-gold-600 mt-1">·</span><span>{children}</span></li>,
                       }}
                     >
                       {streamingMessage}
@@ -236,7 +234,7 @@ export default function AskGina() {
       )}
 
       {/* Input area */}
-      <div className="py-4 border-t border-white/5">
+      <div className="py-4 border-t border-gray-200">
         {messages.length > 0 && (
           <div className="flex items-center justify-end mb-2">
             <button

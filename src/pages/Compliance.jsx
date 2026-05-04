@@ -174,10 +174,10 @@ export default function Compliance({ tab }) {
         </p>
       </div>
 
-      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', width: 'fit-content' }}>
+      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(34,29,53,0.06)', width: 'fit-content' }}>
         {tabs.map(t => (
           <button key={t.key} onClick={() => setActiveTab(t.key)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-white'}`}>
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-navy-950'}`}>
             {t.label}
           </button>
         ))}
@@ -190,7 +190,7 @@ export default function Compliance({ tab }) {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-gray-500 text-xs border-b border-white/6">
+                  <tr className="text-gray-500 text-xs border-b border-gray-200">
                     <th className="text-left py-3">State</th>
                     <th className="text-left py-3">MD Required?</th>
                     <th className="text-left py-3">Nurse Injectors</th>
@@ -198,11 +198,11 @@ export default function Compliance({ tab }) {
                     <th className="text-left py-3">Board</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/4">
+                <tbody className="divide-y divide-gray-100">
                   {STATE_REQUIREMENTS.map((s, i) => (
                     <tr key={i}>
                       <td className="py-3">
-                        <span className="font-medium text-white">{s.state}</span>
+                        <span className="font-medium text-navy-950">{s.state}</span>
                         <span className="block text-xs text-gray-600 mt-0.5">{s.notes}</span>
                       </td>
                       <td className="py-3 text-gray-300">{s.mdRequired}</td>
@@ -232,7 +232,7 @@ export default function Compliance({ tab }) {
                     <FileText size={14} className="text-gold-500" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white text-sm">{form.name}</p>
+                    <p className="font-semibold text-navy-950 text-sm">{form.name}</p>
                     <Badge variant="gold" size="xs">{form.category}</Badge>
                     <div className="flex gap-2 mt-2 flex-wrap">
                       {form.sections.map(s => <span key={s} className="text-xs text-gray-600">· {s}</span>)}
@@ -242,8 +242,8 @@ export default function Compliance({ tab }) {
                 <Badge variant={expandedForm === i ? 'gold' : 'gray'} size="xs">{expandedForm === i ? 'Collapse' : 'View'}</Badge>
               </div>
               {expandedForm === i && (
-                <div className="mt-4 border-t border-white/5 pt-4">
-                  <pre className="whitespace-pre-wrap text-xs text-gray-400 leading-relaxed font-body p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                <div className="mt-4 border-t border-gray-200 pt-4">
+                  <pre className="whitespace-pre-wrap text-xs text-gray-400 leading-relaxed font-body p-4 rounded-xl" style={{ background: 'rgba(34,29,53,0.05)' }}>
                     {form.content}
                   </pre>
                   <p className="text-xs text-gray-600 mt-2">* Customize with your practice details, state-specific language, and have reviewed by a healthcare attorney before use.</p>
@@ -263,7 +263,7 @@ export default function Compliance({ tab }) {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
                     <Shield size={16} className="text-gold-500" />
-                    <h3 className="font-semibold text-white text-sm">{section.category}</h3>
+                    <h3 className="font-semibold text-navy-950 text-sm">{section.category}</h3>
                   </div>
                   <Badge variant={sectionDone === section.items.length ? 'green' : 'amber'} size="xs">
                     {sectionDone}/{section.items.length}
@@ -274,7 +274,7 @@ export default function Compliance({ tab }) {
                     const key = `${si}-${ii}`
                     const isDone = checkedItems[key] !== undefined ? checkedItems[key] : item.done
                     return (
-                      <div key={ii} className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/3 cursor-pointer" onClick={() => toggleItem(key)}>
+                      <div key={ii} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer" onClick={() => toggleItem(key)}>
                         {isDone ? <CheckCircle size={16} className="text-green-400 flex-shrink-0" /> : <Circle size={16} className="text-gray-600 flex-shrink-0" />}
                         <p className={`text-sm ${isDone ? 'line-through text-gray-600' : 'text-gray-300'}`}>{item.text}</p>
                       </div>

@@ -43,7 +43,7 @@ export default function UpgradeWall({ requiredTier = 'growth', feature = 'this f
           <Icon size={28} style={{ color }} />
         </div>
 
-        <h2 className="font-display text-2xl font-bold text-white mb-2">
+        <h2 className="font-display text-2xl font-bold text-navy-950 mb-2">
           Upgrade to {requiredTier.charAt(0).toUpperCase() + requiredTier.slice(1)}
         </h2>
         <p className="text-gray-400 text-sm leading-relaxed mb-6">

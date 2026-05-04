@@ -19,7 +19,7 @@ export default function Button({
     primary: 'btn-primary text-navy-950 px-4',
     ghost: 'btn-ghost',
     danger: 'bg-red-500/10 border border-red-500/30 text-red-400 hover:bg-red-500/20',
-    subtle: 'bg-white/5 border border-white/8 text-gray-300 hover:bg-white/10 hover:text-white',
+    subtle: 'bg-gray-100 border border-gray-200 text-gray-300 hover:bg-gray-100 hover:text-navy-950',
   }
 
   const sizes = {

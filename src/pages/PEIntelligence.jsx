@@ -81,7 +81,7 @@ function EBITDAMultipleCalc() {
           <span className="text-gold-500 font-medium">Current reality check: </span>
           At 15.6% EBITDA margin, Lumina's normalized EBITDA is approximately $336K. At a 6x multiple (appropriate for $2M+ single location), that's a ~$2M valuation. 
           If you improve margins to 25%, EBITDA becomes $540K and valuation jumps to $3.24M at the same multiple. 
-          <span className="text-white font-medium"> This is why I always say: fix margins first, then sell.</span>
+          <span className="text-navy-950 font-medium"> This is why I always say: fix margins first, then sell.</span>
         </p>
       </div>
 
@@ -104,10 +104,10 @@ export default function PEIntelligence({ tab }) {
         <p className="text-xs text-gray-400">PE transactions involve complex legal and financial considerations. This tool is for educational orientation only. Always engage a healthcare M&A attorney and investment banker before entering any PE discussions.</p>
       </div>
 
-      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', width: 'fit-content' }}>
+      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(34,29,53,0.06)', width: 'fit-content' }}>
         {[{ key: 'readiness', label: 'PE Readiness' }, { key: 'ebitda', label: 'EBITDA Builder' }].map(t => (
           <button key={t.key} onClick={() => setActiveTab(t.key)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-white'}`}>
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-navy-950'}`}>
             {t.label}
           </button>
         ))}
@@ -131,7 +131,7 @@ export default function PEIntelligence({ tab }) {
           {PE_READINESS_CRITERIA.map((section, si) => (
             <Card key={si}>
               <div className="flex items-center justify-between mb-3">
-                <h3 className="font-semibold text-white">{section.category}</h3>
+                <h3 className="font-semibold text-navy-950">{section.category}</h3>
                 <Badge variant="gold" size="xs">{section.weight}% weight</Badge>
               </div>
               <div className="space-y-3">

@@ -149,10 +149,10 @@ export default function VendorAdvisor({ tab }) {
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto">
-      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', width: 'fit-content' }}>
+      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(34,29,53,0.06)', width: 'fit-content' }}>
         {tabs.map(t => (
           <button key={t.key} onClick={() => setActiveTab(t.key)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-white'}`}>
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-navy-950'}`}>
             {t.label}
           </button>
         ))}
@@ -175,7 +175,7 @@ export default function VendorAdvisor({ tab }) {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="font-semibold text-white">{vendor.name}</h3>
+                      <h3 className="font-semibold text-navy-950">{vendor.name}</h3>
                       <Badge variant="gray" size="xs">{vendor.category}</Badge>
                       <Badge variant={vendor.rating >= 4.5 ? 'green' : 'amber'} size="xs">★ {vendor.rating}</Badge>
                     </div>
@@ -194,7 +194,7 @@ export default function VendorAdvisor({ tab }) {
               </div>
 
               {expanded === i && (
-                <div className="mt-4 space-y-4 border-t border-white/5 pt-4">
+                <div className="mt-4 space-y-4 border-t border-gray-200 pt-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <p className="text-xs text-green-400 font-medium mb-2 flex items-center gap-1"><CheckCircle size={12} /> Pros</p>
@@ -220,7 +220,7 @@ export default function VendorAdvisor({ tab }) {
                   <div className="flex gap-3 text-xs text-gray-500">
                     <span>Avg revenue/tx: <span className="text-gold-500 font-medium">{vendor.avgRevenuePerTx}</span></span>
                     <span>·</span>
-                    <span>Typical ROI: <span className="text-white">{vendor.roiTimeframe}</span></span>
+                    <span>Typical ROI: <span className="text-navy-950">{vendor.roiTimeframe}</span></span>
                   </div>
                 </div>
               )}

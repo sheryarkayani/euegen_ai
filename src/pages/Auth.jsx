@@ -49,13 +49,9 @@ export default function Auth() {
   }
 
   return (
-    <div className="min-h-screen flex" style={{ backgroundColor: '#0c0a0e' }}>
+    <div className="min-h-screen flex bg-[#f8f6f3]">
       {/* Left panel */}
-      <div className="hidden lg:flex lg:w-1/2 flex-col justify-between p-12 relative overflow-hidden"
-        style={{
-          background: 'linear-gradient(135deg, #0f0d14 0%, #14111c 50%, #1a1627 100%)',
-          borderRight: '1px solid rgba(212,168,83,0.1)',
-        }}
+      <div className="hidden lg:flex lg:w-1/2 flex-col justify-between p-12 relative overflow-hidden bg-gradient-to-br from-[#fffefb] via-[#faf7f2] to-[#f5efe6] border-r border-gray-200"
       >
         {/* Background orbs */}
         <div className="absolute top-20 left-20 w-64 h-64 rounded-full opacity-10 blur-3xl"
@@ -71,16 +67,16 @@ export default function Auth() {
               <span className="font-display font-bold text-navy-950 text-lg">G</span>
             </div>
             <div>
-              <p className="font-display font-bold text-white">Gina's AI</p>
+              <p className="font-display font-bold text-navy-950">Gina's AI</p>
               <p className="text-xs text-gray-600">Med Spa Intelligence Platform</p>
             </div>
           </div>
 
-          <h1 className="font-display text-4xl font-bold text-white leading-tight mb-6">
+          <h1 className="font-display text-4xl font-bold text-navy-950 leading-tight mb-6">
             The intelligence platform built for{' '}
             <span className="text-gold-gradient">med spa owners</span>
           </h1>
-          <p className="text-gray-400 leading-relaxed mb-10">
+          <p className="text-gray-600 leading-relaxed mb-10">
             20 years of aesthetics industry experience, benchmarks from 100+ practices, 
             and Gina's exact frameworks — available 24/7, on demand.
           </p>
@@ -100,7 +96,7 @@ export default function Auth() {
                 className="flex items-center gap-3"
               >
                 <span className="text-xl">{item.icon}</span>
-                <span className="text-sm text-gray-300">{item.text}</span>
+                <span className="text-sm text-gray-700">{item.text}</span>
               </motion.div>
             ))}
           </div>
@@ -113,11 +109,11 @@ export default function Auth() {
                 <span className="font-display font-bold text-navy-950 text-xs">G</span>
               </div>
               <div>
-                <p className="text-sm text-gray-300 italic leading-relaxed">
+                <p className="text-sm text-gray-700 italic leading-relaxed">
                   "Your payroll at 45.5% isn't a staffing problem — it's a productivity tracking problem. 
                   Let's pull the per-provider numbers."
                 </p>
-                <p className="text-xs text-gold-500 mt-2">— Gina's AI, responding to a real client</p>
+                <p className="text-xs text-gold-700 mt-2">— Gina's AI, responding to a real client</p>
               </div>
             </div>
           </div>
@@ -135,7 +131,7 @@ export default function Auth() {
             <div className="w-12 h-12 rounded-2xl gold-gradient flex items-center justify-center shadow-lg mx-auto mb-4 glow-gold">
               <Sparkles size={20} className="text-navy-950" />
             </div>
-            <h2 className="font-display text-2xl font-bold text-white">
+            <h2 className="font-display text-2xl font-bold text-navy-950">
               {mode === 'login' ? 'Welcome back' : 'Get started'}
             </h2>
             <p className="text-gray-500 text-sm mt-2">

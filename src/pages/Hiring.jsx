@@ -216,7 +216,7 @@ function JobDescriptionGenerator() {
       {output && (
         <Card>
           <div className="flex justify-between items-center mb-3">
-            <h3 className="font-display font-semibold text-white">Job Description</h3>
+            <h3 className="font-display font-semibold text-navy-950">Job Description</h3>
             <Button variant="ghost" size="sm" icon={copied ? <Check size={13} /> : <Copy size={13} />}
               onClick={() => { navigator.clipboard.writeText(output); setCopied(true); setTimeout(() => setCopied(false), 2000) }}>
               {copied ? 'Copied!' : 'Copy'}
@@ -237,7 +237,7 @@ function CompBenchmarks() {
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="text-gray-500 text-xs border-b border-white/6">
+            <tr className="text-gray-500 text-xs border-b border-gray-200">
               <th className="text-left py-3">Role</th>
               <th className="text-right py-3">Base Salary</th>
               <th className="text-right py-3">Commission</th>
@@ -245,10 +245,10 @@ function CompBenchmarks() {
               <th className="text-left py-3 pl-4">Notes</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/4">
+          <tbody className="divide-y divide-gray-100">
             {COMP_DATA.map((row, i) => (
               <tr key={i}>
-                <td className="py-3 font-medium text-gray-200">{row.role}</td>
+                <td className="py-3 font-medium text-navy-950">{row.role}</td>
                 <td className="py-3 text-right text-gold-500 font-medium">{row.base}</td>
                 <td className="py-3 text-right text-gray-300">{row.commission}</td>
                 <td className="py-3 text-right text-gray-400 text-xs">{row.bonus}</td>
@@ -312,12 +312,12 @@ export default function Hiring({ tab }) {
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto">
-      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', width: 'fit-content' }}>
+      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(34,29,53,0.06)', width: 'fit-content' }}>
         {tabs.map(t => {
           const Icon = t.icon
           return (
             <button key={t.key} onClick={() => setActiveTab(t.key)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-white'}`}>
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-navy-950'}`}>
               <Icon size={14} />{t.label}
             </button>
           )

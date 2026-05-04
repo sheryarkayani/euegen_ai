@@ -244,12 +244,12 @@ P.S. Your treatment notes are still in your chart. We pick right up where we lef
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto">
-      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', width: 'fit-content' }}>
+      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(34,29,53,0.06)', width: 'fit-content' }}>
         {tabs.map(t => {
           const Icon = t.icon
           return (
             <button key={t.key} onClick={() => setActiveTab(t.key)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-white'}`}>
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-navy-950'}`}>
               <Icon size={14} />{t.label}
             </button>
           )
@@ -268,7 +268,7 @@ P.S. Your treatment notes are still in your chart. We pick right up where we lef
           {output && (
             <Card>
               <div className="flex justify-between items-center mb-3">
-                <h3 className="font-display font-semibold text-white">Your Calendar</h3>
+                <h3 className="font-display font-semibold text-navy-950">Your Calendar</h3>
                 <Button variant="ghost" size="sm" icon={copied ? <Check size={13} /> : <Copy size={13} />}
                   onClick={() => { navigator.clipboard.writeText(output); setCopied(true); setTimeout(() => setCopied(false), 2000) }}>
                   {copied ? 'Copied!' : 'Copy'}
@@ -322,7 +322,7 @@ P.S. Your treatment notes are still in your chart. We pick right up where we lef
               <div className="flex flex-wrap gap-2">
                 {['Re-engagement', 'New Patient Welcome', 'Promotional', 'Post-Treatment', 'Membership Offer'].map(t => (
                   <button key={t} onClick={() => setEmailType(t)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${emailType === t ? 'btn-primary text-navy-950' : 'bg-white/5 text-gray-400 hover:text-white'}`}>
+                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${emailType === t ? 'btn-primary text-navy-950' : 'bg-gray-100 text-gray-400 hover:text-navy-950'}`}>
                     {t}
                   </button>
                 ))}
@@ -336,7 +336,7 @@ P.S. Your treatment notes are still in your chart. We pick right up where we lef
           {output && (
             <Card>
               <div className="flex justify-between items-center mb-3">
-                <h3 className="font-display font-semibold text-white">{emailType} Email</h3>
+                <h3 className="font-display font-semibold text-navy-950">{emailType} Email</h3>
                 <Button variant="ghost" size="sm" icon={copied ? <Check size={13} /> : <Copy size={13} />}
                   onClick={() => { navigator.clipboard.writeText(output); setCopied(true); setTimeout(() => setCopied(false), 2000) }}>
                   {copied ? 'Copied!' : 'Copy'}

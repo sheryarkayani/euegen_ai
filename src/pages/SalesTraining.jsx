@@ -414,12 +414,12 @@ function ScriptGenerator() {
       {output && (
         <Card>
           <div className="flex items-center justify-between mb-3">
-            <h3 className="font-display font-semibold text-white">Your Script</h3>
+            <h3 className="font-display font-semibold text-navy-950">Your Script</h3>
             <Button variant="ghost" size="sm" icon={copied ? <Check size={13} /> : <Copy size={13} />} onClick={copy}>
               {copied ? 'Copied!' : 'Copy'}
             </Button>
           </div>
-          <div className="prose prose-invert prose-sm max-w-none">
+          <div className="prose prose-sm prose-stone max-w-none text-gray-800">
             <pre className="whitespace-pre-wrap text-sm text-gray-300 leading-relaxed font-body bg-transparent border-0 p-0">{output}</pre>
           </div>
         </Card>
@@ -445,13 +445,13 @@ function ArtOfConsult() {
             whileHover={{ y: -2 }}
             onClick={() => setActiveLesson(activeLesson?.num === lesson.num ? null : lesson)}
             className="glass-card rounded-xl p-4 cursor-pointer transition-all"
-            style={{ border: activeLesson?.num === lesson.num ? `1px solid ${lesson.color}50` : '1px solid rgba(255,255,255,0.07)' }}
+            style={{ border: activeLesson?.num === lesson.num ? `1px solid ${lesson.color}50` : '1px solid rgba(34,29,53,0.1)' }}
           >
             <div className="flex items-center gap-3 mb-3">
               <span className="text-2xl">{lesson.icon}</span>
               <div>
                 <Badge variant="gold" size="xs">Lesson {lesson.num}</Badge>
-                <p className="text-sm font-semibold text-white mt-1">{lesson.title}</p>
+                <p className="text-sm font-semibold text-navy-950 mt-1">{lesson.title}</p>
               </div>
             </div>
             <p className="text-xs text-gray-500">Click to expand →</p>
@@ -466,10 +466,10 @@ function ArtOfConsult() {
               <span className="text-2xl">{activeLesson.icon}</span>
               <div>
                 <Badge variant="gold" size="sm">Lesson {activeLesson.num}</Badge>
-                <h3 className="font-display text-lg font-bold text-white mt-1">{activeLesson.title}</h3>
+                <h3 className="font-display text-lg font-bold text-navy-950 mt-1">{activeLesson.title}</h3>
               </div>
             </div>
-            <div className="prose prose-invert prose-sm max-w-none">
+            <div className="prose prose-sm prose-stone max-w-none text-gray-800">
               <pre className="whitespace-pre-wrap text-sm text-gray-300 leading-relaxed font-body bg-transparent border-0 p-0">
                 {activeLesson.content}
               </pre>
@@ -534,7 +534,7 @@ function MysteryShop() {
         <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl" style={{ background: 'rgba(232,116,138,0.1)', border: '1px solid rgba(232,116,138,0.2)' }}>
           🎭
         </div>
-        <h3 className="font-display text-xl font-bold text-white mb-2">Mystery Shopper Training</h3>
+        <h3 className="font-display text-xl font-bold text-navy-950 mb-2">Mystery Shopper Training</h3>
         <p className="text-gray-400 text-sm max-w-md mx-auto mb-6 leading-relaxed">
           Practice handling difficult patient scenarios with AI playing a skeptical, price-sensitive patient named "Jamie." Get scored at the end.
         </p>
@@ -561,7 +561,7 @@ function MysteryShop() {
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-rose-med/20 border border-rose-med/30 flex items-center justify-center text-sm">🎭</div>
           <div>
-            <p className="text-sm font-medium text-white">Jamie (AI Mystery Shopper)</p>
+            <p className="text-sm font-medium text-navy-950">Jamie (AI Mystery Shopper)</p>
             <p className="text-xs text-gray-500">Skeptical first-timer · Price sensitive · Partner hesitant</p>
           </div>
         </div>
@@ -571,11 +571,11 @@ function MysteryShop() {
       <div className="space-y-3 max-h-96 overflow-y-auto p-1">
         {messages.map((m, i) => (
           <div key={i} className={`flex gap-3 ${m.role === 'user' ? 'flex-row-reverse' : ''}`}>
-            <div className={`w-7 h-7 rounded-full flex items-center justify-center text-sm flex-shrink-0 ${m.role === 'jamie' ? 'bg-rose-med/20' : 'bg-white/10'}`}>
+            <div className={`w-7 h-7 rounded-full flex items-center justify-center text-sm flex-shrink-0 ${m.role === 'jamie' ? 'bg-rose-med/20' : 'bg-gray-200'}`}>
               {m.role === 'jamie' ? '🎭' : '💼'}
             </div>
             <div className={`max-w-lg rounded-2xl px-4 py-3 text-sm ${m.role === 'jamie' ? 'chat-message-gina' : 'chat-message-user'}`}>
-              <pre className="whitespace-pre-wrap font-body text-gray-200">{m.content}</pre>
+              <pre className="whitespace-pre-wrap font-body text-gray-800">{m.content}</pre>
             </div>
           </div>
         ))}
@@ -583,7 +583,7 @@ function MysteryShop() {
           <div className="flex gap-3">
             <div className="w-7 h-7 rounded-full bg-rose-med/20 flex items-center justify-center text-sm">🎭</div>
             <div className="max-w-lg rounded-2xl px-4 py-3 text-sm chat-message-gina">
-              <pre className="whitespace-pre-wrap font-body text-gray-200">{streamMsg}</pre>
+              <pre className="whitespace-pre-wrap font-body text-gray-800">{streamMsg}</pre>
             </div>
           </div>
         )}
@@ -622,11 +622,11 @@ function EmailTemplates() {
             key={i}
             onClick={() => setActive(i)}
             className={`w-full text-left p-3 rounded-xl transition-all text-sm ${
-              active === i ? 'border-gold-500/40 bg-gold-500/6' : 'border-white/6 hover:bg-white/4'
+              active === i ? 'border-gold-500/40 bg-gold-500/6' : 'border-gray-200 hover:bg-gray-50'
             }`}
-            style={{ border: `1px solid ${active === i ? 'rgba(212,168,83,0.4)' : 'rgba(255,255,255,0.06)'}` }}
+            style={{ border: `1px solid ${active === i ? 'rgba(212,168,83,0.4)' : 'rgba(34,29,53,0.08)'}` }}
           >
-            <p className="font-medium text-white">{t.name}</p>
+            <p className="font-medium text-navy-950">{t.name}</p>
             <Badge variant="gray" size="xs">{t.tag}</Badge>
           </button>
         ))}
@@ -636,7 +636,7 @@ function EmailTemplates() {
           <div className="flex items-center justify-between mb-4">
             <div>
               <p className="text-xs text-gray-500 mb-1">Subject line:</p>
-              <p className="font-medium text-white">{template.subject}</p>
+              <p className="font-medium text-navy-950">{template.subject}</p>
             </div>
             <Button
               variant="ghost"
@@ -651,7 +651,7 @@ function EmailTemplates() {
               {copied ? 'Copied!' : 'Copy'}
             </Button>
           </div>
-          <div className="p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+          <div className="p-4 rounded-xl" style={{ background: 'rgba(34,29,53,0.05)', border: '1px solid rgba(34,29,53,0.08)' }}>
             <pre className="whitespace-pre-wrap text-sm text-gray-300 leading-relaxed font-body">{template.body}</pre>
           </div>
         </Card>
@@ -671,7 +671,7 @@ export default function SalesTraining({ tab }) {
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto">
-      <div className="flex gap-1 p-1 rounded-xl overflow-x-auto" style={{ background: 'rgba(255,255,255,0.04)', width: 'fit-content' }}>
+      <div className="flex gap-1 p-1 rounded-xl overflow-x-auto" style={{ background: 'rgba(34,29,53,0.06)', width: 'fit-content' }}>
         {tabs.map(t => {
           const Icon = t.icon
           return (
@@ -679,7 +679,7 @@ export default function SalesTraining({ tab }) {
               key={t.key}
               onClick={() => setActiveTab(t.key)}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
-                activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-white'
+                activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-navy-950'
               }`}
             >
               <Icon size={14} />

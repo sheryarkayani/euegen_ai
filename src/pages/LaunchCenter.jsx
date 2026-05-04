@@ -124,7 +124,7 @@ export default function LaunchCenter() {
                   <button
                     key={o.label}
                     onClick={() => setCostMultiplier(o.val)}
-                    className={`flex-1 py-2 rounded-lg text-xs font-medium transition-all ${costMultiplier === o.val ? 'btn-primary text-navy-950' : 'bg-white/5 text-gray-400'}`}
+                    className={`flex-1 py-2 rounded-lg text-xs font-medium transition-all ${costMultiplier === o.val ? 'btn-primary text-navy-950' : 'bg-gray-100 text-gray-400'}`}
                   >
                     {o.label}
                   </button>
@@ -135,13 +135,13 @@ export default function LaunchCenter() {
               {STARTUP_COSTS.map(c => (
                 <div key={c.category} className="flex items-center justify-between py-2 border-b border-white/4">
                   <span className="text-sm text-gray-400">{c.category}</span>
-                  <span className="text-sm font-medium text-white">
+                  <span className="text-sm font-medium text-navy-950">
                     ${Math.round(c.low * costMultiplier).toLocaleString()} – ${Math.round(c.high * costMultiplier).toLocaleString()}
                   </span>
                 </div>
               ))}
               <div className="flex items-center justify-between py-3 border-t border-gold-500/20 mt-2">
-                <span className="font-semibold text-white">Total Estimate</span>
+                <span className="font-semibold text-navy-950">Total Estimate</span>
                 <span className="font-display font-bold text-gold-500 text-lg">
                   ${Math.round(totalLow).toLocaleString()} – ${Math.round(totalHigh).toLocaleString()}
                 </span>
@@ -167,7 +167,7 @@ export default function LaunchCenter() {
                     {pi + 1}
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-white text-sm">Phase {phase.phase}: {phase.title}</p>
+                    <p className="font-semibold text-navy-950 text-sm">Phase {phase.phase}: {phase.title}</p>
                     <p className="text-xs text-gray-500">{phaseChecked}/{phase.items.length} complete</p>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export default function LaunchCenter() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       className={`checklist-item flex items-start justify-between gap-3 p-3 rounded-xl ${checked[item.id] ? 'checked' : ''}`}
-                      style={{ border: '1px solid rgba(255,255,255,0.05)' }}
+                      style={{ border: '1px solid rgba(34,29,53,0.08)' }}
                     >
                       <div className="flex items-start gap-3 flex-1">
                         <button
@@ -222,7 +222,7 @@ export default function LaunchCenter() {
         {ginaModal && (
           <div className="space-y-4">
             <div className="p-3 rounded-xl bg-gold-500/8 border border-gold-500/20">
-              <p className="text-sm font-medium text-white">{ginaModal.text}</p>
+              <p className="text-sm font-medium text-navy-950">{ginaModal.text}</p>
             </div>
             <div className="flex items-start gap-3">
               <div className="w-8 h-8 rounded-full gold-gradient flex items-center justify-center flex-shrink-0">

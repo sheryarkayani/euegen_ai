@@ -103,7 +103,7 @@ export default function Dashboard() {
         className="flex items-start justify-between"
       >
         <div>
-          <h1 className="font-display text-2xl font-bold text-white">
+          <h1 className="font-display text-2xl font-bold text-navy-950">
             {greeting}, {user?.fullName?.split(' ')[0] || 'Dr. Sarah'} 👋
           </h1>
           <p className="text-gray-400 mt-1 text-sm">
@@ -145,7 +145,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <div className="mb-1">
-                <p className="font-display text-xl font-bold text-white">{kpi.value}</p>
+                <p className="font-display text-xl font-bold text-navy-950">{kpi.value}</p>
                 <p className="text-xs text-gray-500 mt-0.5">{kpi.label}</p>
               </div>
               <SparkLine data={kpi.spark} color={kpi.color} />
@@ -159,7 +159,7 @@ export default function Dashboard() {
         <div className="lg:col-span-1">
           <Card>
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-display font-semibold text-white">Quick Actions</h3>
+              <h3 className="font-display font-semibold text-navy-950">Quick Actions</h3>
               <Zap size={16} className="text-gold-500" />
             </div>
             <div className="space-y-2">
@@ -172,15 +172,15 @@ export default function Dashboard() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 + i * 0.07 }}
                     onClick={() => navigate(action.path)}
-                    className="w-full flex items-center justify-between gap-3 p-3 rounded-xl transition-all duration-200 hover:bg-white/5 text-left group"
-                    style={{ border: '1px solid rgba(255,255,255,0.04)' }}
+                    className="w-full flex items-center justify-between gap-3 p-3 rounded-xl transition-all duration-200 hover:bg-gray-100 text-left group"
+                    style={{ border: '1px solid rgba(34,29,53,0.06)' }}
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${action.color}15` }}>
                         <Icon size={15} style={{ color: action.color }} />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-gray-200">{action.label}</p>
+                        <p className="text-sm font-medium text-navy-950">{action.label}</p>
                         <p className="text-xs text-gray-600">{action.desc}</p>
                       </div>
                     </div>
@@ -196,7 +196,7 @@ export default function Dashboard() {
         <div className="lg:col-span-2">
           <Card>
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-display font-semibold text-white">Practice Pulse</h3>
+              <h3 className="font-display font-semibold text-navy-950">Practice Pulse</h3>
               <Badge variant="amber" size="xs">Live</Badge>
             </div>
             <div className="space-y-3">
@@ -209,7 +209,7 @@ export default function Dashboard() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + i * 0.06 }}
                     className="flex items-start gap-3 p-3 rounded-xl"
-                    style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)' }}
+                    style={{ background: 'rgba(34,29,53,0.04)', border: '1px solid rgba(34,29,53,0.06)' }}
                   >
                     <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${item.color}15` }}>
                       <Icon size={13} style={{ color: item.color }} />
@@ -235,7 +235,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-display font-semibold text-white">Active Red Flags</h3>
+            <h3 className="font-display font-semibold text-navy-950">Active Red Flags</h3>
             <AlertTriangle size={16} className="text-red-400" />
           </div>
           <div className="space-y-3">
@@ -256,7 +256,7 @@ export default function Dashboard() {
 
         <Card>
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-display font-semibold text-white">Practice Snapshot</h3>
+            <h3 className="font-display font-semibold text-navy-950">Practice Snapshot</h3>
             <Badge variant="gold" size="xs">Growth Tier</Badge>
           </div>
           <div className="grid grid-cols-2 gap-3">
@@ -270,7 +270,7 @@ export default function Dashboard() {
               { label: 'Avg Rev/Visit', value: '$385', note: 'Good range' },
               { label: 'Providers', value: '4', note: '1 NP, 1 PA, 2 RN' },
             ].map((item, i) => (
-              <div key={i} className="p-3 rounded-lg" style={{ background: 'rgba(255,255,255,0.03)' }}>
+              <div key={i} className="p-3 rounded-lg" style={{ background: 'rgba(34,29,53,0.05)' }}>
                 <p className="text-lg font-semibold" style={{ color: item.warn ? '#f59e0b' : '#f0ece4' }}>
                   {item.value}
                 </p>

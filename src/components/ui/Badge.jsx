@@ -6,7 +6,7 @@ export default function Badge({ children, variant = 'gold', size = 'sm' }) {
     red: 'tag-red',
     amber: 'tag-amber',
     blue: 'tag-blue',
-    gray: 'bg-white/5 text-gray-400 border border-white/10',
+    gray: 'bg-gray-100 text-gray-700 border border-gray-200',
   }
 
   const sizes = {

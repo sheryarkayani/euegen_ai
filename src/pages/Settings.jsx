@@ -75,12 +75,12 @@ export default function Settings() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', width: 'fit-content' }}>
+      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(34,29,53,0.06)', width: 'fit-content' }}>
         {sections.map(s => {
           const Icon = s.icon
           return (
             <button key={s.key} onClick={() => setActiveSection(s.key)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeSection === s.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-white'}`}>
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeSection === s.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-navy-950'}`}>
               <Icon size={14} />{s.label}
             </button>
           )
@@ -124,10 +124,10 @@ export default function Settings() {
             </div>
           </div>
 
-          <div className="border-t border-white/6 pt-4">
+          <div className="border-t border-gray-200 pt-4">
             <div className="mb-4">
               <p className="text-xs text-gray-400 mb-1.5">Account Email</p>
-              <p className="text-sm text-gray-200">{user?.email}</p>
+              <p className="text-sm text-gray-700">{user?.email}</p>
             </div>
             <Button variant="primary" icon={<Save size={14} />} onClick={savePractice}>
               Save Changes
@@ -147,7 +147,7 @@ export default function Settings() {
                   key={tier.key}
                   whileHover={{ y: -2 }}
                   className="glass-card rounded-xl p-5 relative overflow-hidden"
-                  style={{ border: `1px solid ${isCurrent ? tier.color + '50' : 'rgba(255,255,255,0.07)'}` }}
+                  style={{ border: `1px solid ${isCurrent ? tier.color + '50' : 'rgba(34,29,53,0.1)'}` }}
                 >
                   {tier.popular && (
                     <div className="absolute top-3 right-3">
@@ -164,7 +164,7 @@ export default function Settings() {
                       <Icon size={18} style={{ color: tier.color }} />
                     </div>
                     <div>
-                      <p className="font-display font-bold text-white">{tier.label}</p>
+                      <p className="font-display font-bold text-navy-950">{tier.label}</p>
                       <p className="text-sm font-semibold" style={{ color: tier.color }}>{tier.price}</p>
                     </div>
                   </div>

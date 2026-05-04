@@ -16,13 +16,13 @@ const CHART_COLORS = { gold: '#d4a853', rose: '#e8748a', blue: '#3b82f6', green:
 const CustomTooltip = ({ active, payload, label }) => {
   if (!active || !payload?.length) return null
   return (
-    <div className="glass-card rounded-xl p-3 border border-white/10 text-sm">
+    <div className="glass-card rounded-xl p-3 border border-gray-200 text-sm">
       <p className="text-gray-400 mb-2">{label}</p>
       {payload.map((p, i) => (
         <div key={i} className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color }} />
           <span className="text-gray-300">{p.name}:</span>
-          <span className="text-white font-medium">
+          <span className="text-navy-950 font-medium">
             {typeof p.value === 'number' && p.value > 1000
               ? `$${p.value.toLocaleString()}`
               : `${p.value}${p.name?.includes('%') ? '%' : ''}`}
@@ -109,13 +109,13 @@ export default function FinancialKPI({ tab }) {
   return (
     <div className="space-y-6 max-w-7xl mx-auto">
       {/* Tabs */}
-      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', width: 'fit-content' }}>
+      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(34,29,53,0.06)', width: 'fit-content' }}>
         {tabs.map(t => (
           <button
             key={t.key}
             onClick={() => setActiveTab(t.key)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-white'
+              activeTab === t.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-navy-950'
             }`}
           >
             {t.label}
@@ -148,7 +148,7 @@ export default function FinancialKPI({ tab }) {
                     </div>
                     <Badge variant={k.pos ? 'green' : 'red'} size="xs">{k.change}</Badge>
                   </div>
-                  <p className="font-display text-xl font-bold text-white">{k.value}</p>
+                  <p className="font-display text-xl font-bold text-navy-950">{k.value}</p>
                   <p className="text-xs text-gray-500 mt-0.5">{k.label}</p>
                 </motion.div>
               )
@@ -161,12 +161,12 @@ export default function FinancialKPI({ tab }) {
               <CardHeader title="Monthly Revenue Trend" subtitle="vs. target" />
               <ResponsiveContainer width="100%" height={220}>
                 <BarChart data={monthlyRevenue} barGap={4}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(34,29,53,0.08)" />
                   <XAxis dataKey="month" tick={{ fill: '#9b94a8', fontSize: 11 }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fill: '#9b94a8', fontSize: 11 }} axisLine={false} tickLine={false} tickFormatter={v => `$${(v/1000).toFixed(0)}K`} />
                   <Tooltip content={<CustomTooltip />} />
                   <Bar dataKey="revenue" name="Revenue" fill="#d4a853" radius={[4,4,0,0]} />
-                  <Bar dataKey="target" name="Target" fill="rgba(255,255,255,0.06)" radius={[4,4,0,0]} />
+                  <Bar dataKey="target" name="Target" fill="rgba(34,29,53,0.08)" radius={[4,4,0,0]} />
                 </BarChart>
               </ResponsiveContainer>
             </Card>
@@ -175,7 +175,7 @@ export default function FinancialKPI({ tab }) {
               <CardHeader title="Patient Volume" subtitle="New vs. returning" />
               <ResponsiveContainer width="100%" height={220}>
                 <BarChart data={patientFlow} barGap={4}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(34,29,53,0.08)" />
                   <XAxis dataKey="month" tick={{ fill: '#9b94a8', fontSize: 11 }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fill: '#9b94a8', fontSize: 11 }} axisLine={false} tickLine={false} />
                   <Tooltip content={<CustomTooltip />} />
@@ -192,7 +192,7 @@ export default function FinancialKPI({ tab }) {
               <CardHeader title="Payroll Ratio Trend" subtitle="Target: <38%" />
               <ResponsiveContainer width="100%" height={200}>
                 <LineChart data={payrollTrend}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(34,29,53,0.08)" />
                   <XAxis dataKey="month" tick={{ fill: '#9b94a8', fontSize: 11 }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fill: '#9b94a8', fontSize: 11 }} axisLine={false} tickLine={false} unit="%" />
                   <Tooltip content={<CustomTooltip />} />
@@ -210,9 +210,9 @@ export default function FinancialKPI({ tab }) {
                   <div key={s.name}>
                     <div className="flex justify-between text-xs mb-1">
                       <span className="text-gray-400">{s.name}</span>
-                      <span className="text-white font-medium">${s.revenue.toLocaleString()} ({s.pct}%)</span>
+                      <span className="text-navy-950 font-medium">${s.revenue.toLocaleString()} ({s.pct}%)</span>
                     </div>
-                    <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+                    <div className="h-2 rounded-full bg-gray-100 overflow-hidden">
                       <div
                         className="h-full rounded-full gold-gradient"
                         style={{ width: `${s.pct}%`, opacity: 0.7 + (s.pct / 100) * 0.3 }}
@@ -243,7 +243,7 @@ export default function FinancialKPI({ tab }) {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="text-gray-500 text-xs border-b border-white/6">
+                <tr className="text-gray-500 text-xs border-b border-gray-200">
                   <th className="text-left py-3">Category</th>
                   <th className="text-right py-3">Amount</th>
                   <th className="text-right py-3">% of Revenue</th>
@@ -251,7 +251,7 @@ export default function FinancialKPI({ tab }) {
                   <th className="text-right py-3">Status</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/4">
+              <tbody className="divide-y divide-gray-100">
                 {[
                   { cat: 'Total Revenue', val: 180000, pct: 100, bench: '—', status: '✓' },
                   { cat: 'Payroll', val: -82000, pct: 45.5, bench: '30–38%', status: '⚠', warn: true },
@@ -263,7 +263,7 @@ export default function FinancialKPI({ tab }) {
                 ].map((row, i) => (
                   <tr key={i} className={row.highlight ? 'font-semibold' : ''}>
                     <td className="py-3 text-gray-300">{row.cat}</td>
-                    <td className={`py-3 text-right font-medium ${row.val < 0 ? 'text-red-400' : row.highlight ? 'text-gold-500' : 'text-white'}`}>
+                    <td className={`py-3 text-right font-medium ${row.val < 0 ? 'text-red-400' : row.highlight ? 'text-gold-500' : 'text-navy-950'}`}>
                       {row.val < 0 ? '-' : ''}${Math.abs(row.val).toLocaleString()}
                     </td>
                     <td className={`py-3 text-right ${row.warn ? 'text-amber-400 font-semibold' : 'text-gray-400'}`}>{row.pct}%</td>

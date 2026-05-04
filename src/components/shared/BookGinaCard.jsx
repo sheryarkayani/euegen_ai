@@ -20,7 +20,7 @@ export default function BookGinaCard() {
       <div className="p-4">
         <button
           onClick={() => setDismissed(true)}
-          className="absolute top-3 right-3 w-6 h-6 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-500 hover:text-white transition-colors"
+          className="absolute top-3 right-3 w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 hover:text-navy-950 transition-colors"
         >
           <X size={12} />
         </button>
@@ -30,8 +30,8 @@ export default function BookGinaCard() {
             <span className="font-display font-bold text-sm text-navy-950">G</span>
           </div>
           <div>
-            <p className="text-sm font-semibold text-white leading-tight">Complex situation?</p>
-            <p className="text-xs text-gray-400 mt-0.5 leading-relaxed">
+            <p className="text-sm font-semibold text-navy-950 leading-tight">Complex situation?</p>
+            <p className="text-xs text-gray-600 mt-0.5 leading-relaxed">
               Some things need a real conversation. Talk to Gina directly.
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function BookGinaCard() {
         <div className="flex gap-2">
           <a
             href="tel:+15551234567"
-            className="flex-1 flex items-center justify-center gap-1.5 text-xs font-medium text-gray-300 bg-white/5 hover:bg-white/10 rounded-lg py-2 transition-colors"
+            className="flex-1 flex items-center justify-center gap-1.5 text-xs font-medium text-navy-950 bg-gray-100 hover:bg-gray-200 rounded-lg py-2 transition-colors"
           >
             <Phone size={12} />
             Call Gina
@@ -68,7 +68,7 @@ export function BookGinaInline() {
           <span className="font-display font-bold text-sm text-navy-950">G</span>
         </div>
         <div className="flex-1">
-          <p className="text-sm font-medium text-white">This is a great use case for a 1:1 with Gina</p>
+          <p className="text-sm font-medium text-navy-950">This is a great use case for a 1:1 with Gina</p>
           <p className="text-xs text-gray-500 mt-0.5">Complex situations deserve a real conversation.</p>
         </div>
         <a

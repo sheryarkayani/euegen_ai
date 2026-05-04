@@ -66,14 +66,14 @@ export default function EmployeeLifecycle() {
               whileHover={{ y: -2 }}
               onClick={() => setActiveEmployee(isActive ? null : { ...provider, ...details })}
               className="glass-card rounded-xl p-4 cursor-pointer transition-all"
-              style={{ border: `1px solid ${isActive ? `${provider.color}50` : 'rgba(255,255,255,0.07)'}` }}
+              style={{ border: `1px solid ${isActive ? `${provider.color}50` : 'rgba(34,29,53,0.1)'}` }}
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white" style={{ backgroundColor: provider.color + '30', border: `2px solid ${provider.color}` }}>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-navy-950" style={{ backgroundColor: provider.color + '30', border: `2px solid ${provider.color}` }}>
                   {provider.initials}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white truncate">{provider.name.split(' ')[1] || provider.name.split(' ')[0]}</p>
+                  <p className="text-sm font-semibold text-navy-950 truncate">{provider.name.split(' ')[1] || provider.name.split(' ')[0]}</p>
                   <p className="text-xs text-gray-500 truncate">{provider.role.split('/')[0]}</p>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function EmployeeLifecycle() {
                 <p className="text-xs text-gray-600">{ONBOARDING_STAGES[stage - 1]}</p>
                 <div className="flex gap-1">
                   {[1,2,3,4,5].map(i => (
-                    <div key={i} className="flex-1 h-1 rounded-full" style={{ backgroundColor: i <= stage ? provider.color : 'rgba(255,255,255,0.08)' }} />
+                    <div key={i} className="flex-1 h-1 rounded-full" style={{ backgroundColor: i <= stage ? provider.color : 'rgba(34,29,53,0.1)' }} />
                   ))}
                 </div>
               </div>
@@ -113,17 +113,17 @@ export default function EmployeeLifecycle() {
           <Card style={{ borderColor: `${activeEmployee.color}30` }}>
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white" style={{ backgroundColor: activeEmployee.color + '25', border: `2px solid ${activeEmployee.color}` }}>
+                <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-navy-950" style={{ backgroundColor: activeEmployee.color + '25', border: `2px solid ${activeEmployee.color}` }}>
                   {activeEmployee.initials}
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-bold text-white">{activeEmployee.name}</h3>
+                  <h3 className="font-display text-lg font-bold text-navy-950">{activeEmployee.name}</h3>
                   <p className="text-sm text-gray-400">{activeEmployee.role} · {activeEmployee.tenure} months tenure</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Star size={14} className="text-gold-500" />
-                <span className="text-white font-medium">{activeEmployee.performance.satisfaction}</span>
+                <span className="text-navy-950 font-medium">{activeEmployee.performance.satisfaction}</span>
                 <span className="text-xs text-gray-500">patient rating</span>
               </div>
             </div>
@@ -161,10 +161,10 @@ export default function EmployeeLifecycle() {
         <CardHeader title="Retention Playbook" icon={Award} subtitle="Gina's top strategies for keeping great providers" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {RETENTION_TIPS.map((tip, i) => (
-            <div key={i} className="p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <div key={i} className="p-4 rounded-xl" style={{ background: 'rgba(34,29,53,0.05)', border: '1px solid rgba(34,29,53,0.08)' }}>
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-xl">{tip.icon}</span>
-                <p className="font-medium text-white text-sm">{tip.title}</p>
+                <p className="font-medium text-navy-950 text-sm">{tip.title}</p>
               </div>
               <p className="text-xs text-gray-400 leading-relaxed">{tip.tip}</p>
             </div>

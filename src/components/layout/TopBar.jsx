@@ -17,23 +17,20 @@ export default function TopBar({ title, subtitle }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="h-16 flex items-center justify-between px-6 border-b border-white/5" style={{
-      background: 'rgba(12,10,14,0.8)',
-      backdropFilter: 'blur(12px)',
-    }}>
+    <div className="h-16 flex items-center justify-between px-6 border-b border-gray-200 bg-gray-1005 backdrop-blur-md">
       <div>
-        {title && <h1 className="font-display text-lg font-semibold text-white">{title}</h1>}
-        {subtitle && <p className="text-xs text-gray-500 mt-0.5">{subtitle}</p>}
+        {title && <h1 className="font-display text-lg font-semibold text-navy-950">{title}</h1>}
+        {subtitle && <p className="text-xs text-gray-600 mt-0.5">{subtitle}</p>}
       </div>
 
       <div className="flex items-center gap-3">
         {/* Search */}
-        <button className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/8 flex items-center justify-center text-gray-500 hover:text-gray-300 transition-colors">
+        <button className="w-8 h-8 rounded-lg bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 hover:text-navy-950 transition-colors">
           <Search size={15} />
         </button>
 
         {/* Notifications */}
-        <button className="relative w-8 h-8 rounded-lg bg-white/5 hover:bg-white/8 flex items-center justify-center text-gray-500 hover:text-gray-300 transition-colors">
+        <button className="relative w-8 h-8 rounded-lg bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 hover:text-navy-950 transition-colors">
           <Bell size={15} />
           <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-rose-med" />
         </button>
@@ -42,14 +39,14 @@ export default function TopBar({ title, subtitle }) {
         <div className="relative">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/8 transition-colors"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors border border-gray-200"
           >
             <div className="w-6 h-6 rounded-full gold-gradient flex items-center justify-center">
               <span className="text-xs font-bold text-navy-950">
                 {user?.fullName?.[0] || 'U'}
               </span>
             </div>
-            <span className="text-sm text-gray-300 font-medium">{user?.fullName?.split(' ')[0] || 'Demo'}</span>
+            <span className="text-sm text-navy-950 font-medium">{user?.fullName?.split(' ')[0] || 'Demo'}</span>
             <Badge variant={TIER_BADGES[user?.tier] || 'gray'} size="xs">
               {user?.tier || 'free'}
             </Badge>
@@ -57,14 +54,14 @@ export default function TopBar({ title, subtitle }) {
           </button>
 
           {menuOpen && (
-            <div className="absolute right-0 top-full mt-2 w-48 glass-card rounded-xl border border-white/8 shadow-xl py-1 z-50">
-              <div className="px-3 py-2 border-b border-white/5">
-                <p className="text-xs font-medium text-white">{user?.fullName}</p>
-                <p className="text-xs text-gray-500 mt-0.5">{user?.email}</p>
+            <div className="absolute right-0 top-full mt-2 w-48 glass-card rounded-xl border border-gray-200 shadow-xl py-1 z-50">
+              <div className="px-3 py-2 border-b border-gray-100">
+                <p className="text-xs font-medium text-navy-950">{user?.fullName}</p>
+                <p className="text-xs text-gray-600 mt-0.5">{user?.email}</p>
               </div>
               <button
                 onClick={() => { signOut(); setMenuOpen(false) }}
-                className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-400 hover:text-red-400 hover:bg-red-500/5 transition-colors"
+                className="flex items-center gap-2 w-full px-3 py-2 text-xs text-gray-600 hover:text-red-600 hover:bg-red-50 transition-colors"
               >
                 <LogOut size={12} />
                 Sign Out
