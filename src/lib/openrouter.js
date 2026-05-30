@@ -7,8 +7,8 @@ export async function streamCompletion({ systemPrompt, messages, onChunk, model 
     headers: {
       'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
       'Content-Type': 'application/json',
-      'HTTP-Referer': 'https://ginasai.com',
-      'X-Title': "Gina's AI — Med Spa Matchmaker"
+      'HTTP-Referer': 'https://katrinaai.com',
+      'X-Title': "Katrina's AI — CFO & Practice Intelligence"
     },
     body: JSON.stringify({
       model,
@@ -53,8 +53,8 @@ export async function generateContent({ systemPrompt, userPrompt, model = 'anthr
     headers: {
       'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
       'Content-Type': 'application/json',
-      'HTTP-Referer': 'https://ginasai.com',
-      'X-Title': "Gina's AI"
+      'HTTP-Referer': 'https://katrinaai.com',
+      'X-Title': "Katrina's AI"
     },
     body: JSON.stringify({
       model,

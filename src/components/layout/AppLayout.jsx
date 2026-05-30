@@ -5,7 +5,7 @@ import TopBar from './TopBar'
 
 export default function AppLayout({ title, subtitle }) {
   return (
-    <div className="min-h-screen bg-[#f8f6f3]">
+    <div className="min-h-screen bg-[#FCFAF7]">
       <Sidebar />
       <div className="ml-60 flex flex-col min-h-screen">
         <TopBar title={title} subtitle={subtitle} />

@@ -27,15 +27,15 @@ function ProgressBar({ current, total }) {
         {STEPS.map((step, i) => (
           <div key={i} className="flex items-center gap-2">
             <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
-              i < current ? 'gold-gradient text-navy-950' :
-              i === current ? 'border-2 border-gold-500 text-gold-500' :
+              i < current ? 'primary-gradient text-white shadow-sm' :
+              i === current ? 'border-2 border-indigo-600 text-indigo-600' :
               'bg-gray-100 text-gray-600'
             }`}>
               {i < current ? <CheckCircle size={14} /> : i + 1}
             </div>
             {i < STEPS.length - 1 && (
               <div className="flex-1 h-0.5 w-8 md:w-16 lg:w-24" style={{
-                background: i < current ? 'linear-gradient(90deg,#d4a853,#e8b55a)' : 'rgba(34,29,53,0.1)',
+                background: i < current ? 'var(--primary-gradient)' : 'rgba(99,102,241,0.1)',
               }} />
             )}
           </div>
@@ -244,7 +244,7 @@ function ScoreReport({ report }) {
     import('jspdf').then(({ jsPDF }) => {
       const doc = new jsPDF()
       doc.setFontSize(20)
-      doc.text("Gina's AI — Health Score Report", 20, 20)
+      doc.text("Katrina's AI — Health Score Report", 20, 20)
       doc.setFontSize(14)
       doc.text(`${report.practice}`, 20, 35)
       doc.setFontSize(12)
@@ -308,19 +308,19 @@ function ScoreReport({ report }) {
         </div>
       </Card>
 
-      {/* Gina Says */}
+      {/* Katrina's CFO Assessment */}
       <Card>
-        <CardHeader title="Gina Says" />
+        <CardHeader title="Katrina's CFO Assessment" />
         <div className="space-y-4">
           {Object.entries(report.ginaSays).map(([domain, insight]) => (
-            <div key={domain} className="p-4 rounded-xl" style={{ background: 'rgba(212,168,83,0.04)', border: '1px solid rgba(212,168,83,0.12)' }}>
+            <div key={domain} className="p-4 rounded-xl" style={{ background: 'rgba(99,102,241,0.04)', border: '1px solid rgba(99,102,241,0.12)' }}>
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-5 h-5 rounded-full gold-gradient flex items-center justify-center">
-                  <span className="text-navy-950 font-bold text-xs">G</span>
+                <div className="w-5 h-5 rounded-full primary-gradient flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">K</span>
                 </div>
-                <span className="text-xs font-medium text-gold-500 capitalize">{domainLabels[domain]}</span>
+                <span className="text-xs font-medium text-indigo-600 capitalize">{domainLabels[domain]}</span>
               </div>
-              <p className="text-sm text-gray-300 leading-relaxed italic">"{insight}"</p>
+              <p className="text-sm text-gray-700 leading-relaxed italic">"{insight}"</p>
             </div>
           ))}
         </div>
@@ -353,8 +353,8 @@ function ScoreReport({ report }) {
                   </div>
                   <p className="text-sm text-gray-400 leading-relaxed mb-2">{flag.detail}</p>
                   <div className="flex items-start gap-2 p-3 rounded-lg" style={{ background: 'rgba(34,29,53,0.06)' }}>
-                    <CheckCircle size={13} className="text-gold-500 mt-0.5 flex-shrink-0" />
-                    <p className="text-xs text-gray-300">{flag.action}</p>
+                    <CheckCircle size={13} className="text-indigo-600 mt-0.5 flex-shrink-0" />
+                    <p className="text-xs text-gray-500">{flag.action}</p>
                   </div>
                 </div>
               </div>
@@ -377,8 +377,8 @@ function ScoreReport({ report }) {
               </div>
               <ul className="space-y-2">
                 {phase.actions.map((action, j) => (
-                  <li key={j} className="flex gap-2 text-sm text-gray-400">
-                    <span className="text-gold-500 mt-1 flex-shrink-0">·</span>
+                  <li key={j} className="flex gap-2 text-sm text-gray-500">
+                    <span className="text-indigo-600 mt-1 flex-shrink-0">·</span>
                     {action}
                   </li>
                 ))}
@@ -472,9 +472,9 @@ export default function HealthScore({ showReport }) {
           </div>
 
           {/* Quick demo */}
-          <p className="text-center text-xs text-gray-700 mt-6">
+          <p className="text-center text-xs text-gray-500 mt-6">
             Fields are pre-filled with Lumina Aesthetics demo data ·{' '}
-            <button className="text-gold-600 hover:text-gold-500" onClick={() => setShowingReport(true)}>
+            <button className="text-indigo-600 hover:text-indigo-500" onClick={() => setShowingReport(true)}>
               Skip to report →
             </button>
           </p>

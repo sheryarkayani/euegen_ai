@@ -77,7 +77,7 @@ export const dummyHealthScoreReport = {
       title: 'Overhaul Consultation Process',
       priority: 'high',
       actions: [
-        'Create a 5-step consultation script (use Gina\'s script generator)',
+        'Create a 5-step consultation script (use Katrina\'s script generator)',
         'Implement a treatment plan form that every provider fills out during consult',
         'Require every consultation to end with a specific recommendation and price — not a "think about it"',
         'Role-play consultations in a team meeting this week',
@@ -169,14 +169,14 @@ Your current location is generating $180K/month with a 15.6% EBITDA margin. Top 
 
 **The marker I'd look for:** When you hit $220K/month at 25%+ EBITDA margin consistently for six months, we have a different conversation.
 
-**Next step:** This is exactly the kind of situation I'd want to sit down with you on — [Book a call with Gina] to build a real expansion timeline.`,
+**Next step:** This is exactly the kind of situation I'd want to sit down with you on — [Book a call with Katrina] to build a real expansion timeline.`,
     escalate: true,
   },
   {
     question: "What's a good membership program structure?",
     answer: `Your 147 members at $1,176/month in membership revenue tells me your membership is probably underpriced or under-sold. Let's fix that.
 
-**The Gina-Approved Membership Framework:**
+**The Katrina-Approved Membership Framework:**
 
 **Tier 1 — Essentials ($149/month)**
 - 1 syringe of Botox per quarter (saves ~$50)
@@ -211,7 +211,7 @@ Target: Top 10% of spenders
 2. Where are those 48 new patients coming from? (Google Ads, referral, Instagram, walk-in?)
 3. What is your average lifetime value of a new patient? (If it's $2K+, $167 CAC is a steal.)
 
-**The Gina framework for marketing allocation:**
+**The Katrina framework for marketing allocation:**
 
 - **40%** — Google Ads (search intent, high-converting, track ROI directly)
 - **25%** — Instagram/Meta (brand awareness, remarketing to website visitors)

@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion'
 
-export default function GinaTyping({ message = "Gina is thinking..." }) {
+export default function KatrinaTyping({ message = "Katrina is thinking..." }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
-      className="flex items-center gap-3 py-3 px-4 chat-message-gina rounded-xl max-w-xs"
+      className="flex items-center gap-3 py-3 px-4 chat-message-katrina rounded-xl max-w-xs"
     >
       {/* Avatar */}
-      <div className="w-8 h-8 rounded-full gold-gradient flex items-center justify-center flex-shrink-0 shadow-lg">
-        <span className="text-xs font-bold text-navy-950 font-display">G</span>
+      <div className="w-8 h-8 rounded-full primary-gradient flex items-center justify-center flex-shrink-0 shadow-lg glow-primary">
+        <span className="text-xs font-bold text-white font-display">K</span>
       </div>
 
       <div className="flex items-center gap-3">
@@ -19,7 +19,7 @@ export default function GinaTyping({ message = "Gina is thinking..." }) {
           {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
-              className="w-1.5 h-1.5 rounded-full bg-gold-500"
+              className="w-1.5 h-1.5 rounded-full bg-indigo-500"
               animate={{
                 y: [0, -6, 0],
                 opacity: [0.4, 1, 0.4],

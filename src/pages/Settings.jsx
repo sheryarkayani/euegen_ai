@@ -15,23 +15,23 @@ const TIERS = [
     price: '$0',
     icon: Star,
     color: '#9b94a8',
-    features: ['Ask Gina (5 questions/month)', 'Health Score Intake', 'Dashboard', 'Settings'],
+    features: ['Ask Katrina (5 questions/month)', 'Health Score Intake', 'Dashboard', 'Settings'],
   },
   {
     key: 'starter',
     label: 'Starter',
     price: '$97/mo',
     icon: Star,
-    color: '#d4a853',
-    features: ['Ask Gina (25 questions/month)', 'Health Score Reports', 'Launch Center', 'Vendor Advisor'],
+    color: '#6366f1',
+    features: ['Ask Katrina (25 questions/month)', 'Health Score Reports', 'Launch Center', 'Vendor Advisor'],
   },
   {
     key: 'growth',
     label: 'Growth',
     price: '$297/mo',
     icon: Zap,
-    color: '#e8748a',
-    features: ['Unlimited Ask Gina', 'All Starter features', 'Financial KPI Dashboard', 'Sales Training', 'Hiring Suite', 'Marketing Studio', 'Compliance Center', 'Event Planner', 'Employee Lifecycle'],
+    color: '#8b5cf6',
+    features: ['Unlimited Ask Katrina', 'All Starter features', 'Financial KPI Dashboard', 'Sales Training', 'Hiring Suite', 'Marketing Studio', 'Compliance Center', 'Event Planner', 'Employee Lifecycle'],
     popular: true,
   },
   {
@@ -39,8 +39,8 @@ const TIERS = [
     label: 'Scale',
     price: '$597/mo',
     icon: Crown,
-    color: '#8b5cf6',
-    features: ['All Growth features', 'Mystery Shopper AI', 'PE Intelligence', 'Priority Support', 'Monthly 1:1 with Gina'],
+    color: '#ef4444',
+    features: ['All Growth features', 'Mystery Shopper AI', 'PE Intelligence', 'Priority Support', 'Monthly 1:1 with Katrina'],
   },
 ]
 
@@ -75,12 +75,12 @@ export default function Settings() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      <div className="flex gap-1 p-1 rounded-xl" style={{ background: 'rgba(34,29,53,0.06)', width: 'fit-content' }}>
+      <div className="flex gap-1 p-1 rounded-xl bg-gray-100" style={{ width: 'fit-content' }}>
         {sections.map(s => {
           const Icon = s.icon
           return (
             <button key={s.key} onClick={() => setActiveSection(s.key)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeSection === s.key ? 'btn-primary text-navy-950' : 'text-gray-400 hover:text-navy-950'}`}>
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeSection === s.key ? 'btn-primary text-white shadow-sm' : 'text-gray-500 hover:text-navy-950'}`}>
               <Icon size={14} />{s.label}
             </button>
           )
@@ -215,9 +215,9 @@ export default function Settings() {
                 />
               </div>
             ))}
-            <div className="p-3 rounded-xl" style={{ background: 'rgba(212,168,83,0.06)', border: '1px solid rgba(212,168,83,0.15)' }}>
-              <p className="text-xs text-gray-400">
-                <span className="text-gold-500 font-medium">Note: </span>
+            <div className="p-3 rounded-xl" style={{ background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.15)' }}>
+              <p className="text-xs text-gray-500 font-body">
+                <span className="text-indigo-600 font-semibold">Note: </span>
                 API keys are stored in your .env.local file. Never commit .env.local to version control. In production, use environment variables through your hosting platform.
               </p>
             </div>

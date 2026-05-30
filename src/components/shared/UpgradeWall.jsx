@@ -10,9 +10,9 @@ const TIER_ICONS = {
 }
 
 const TIER_COLORS = {
-  starter: '#d4a853',
-  growth: '#e8748a',
-  scale: '#8b5cf6',
+  starter: '#6366f1',
+  growth: '#8b5cf6',
+  scale: '#ef4444',
   enterprise: '#10b981',
 }
 
@@ -25,7 +25,7 @@ const TIER_FEATURES = {
 
 export default function UpgradeWall({ requiredTier = 'growth', feature = 'this feature' }) {
   const Icon = TIER_ICONS[requiredTier] || Lock
-  const color = TIER_COLORS[requiredTier] || '#d4a853'
+  const color = TIER_COLORS[requiredTier] || '#6366f1'
   const features = TIER_FEATURES[requiredTier] || []
 
   return (
@@ -48,7 +48,7 @@ export default function UpgradeWall({ requiredTier = 'growth', feature = 'this f
         </h2>
         <p className="text-gray-400 text-sm leading-relaxed mb-6">
           {feature} is available on the <strong style={{ color }}>{requiredTier}</strong> plan and above.
-          Unlock the full power of Gina's AI intelligence platform.
+          Unlock the full power of Katrina's CFO intelligence platform.
         </p>
 
         {features.length > 0 && (

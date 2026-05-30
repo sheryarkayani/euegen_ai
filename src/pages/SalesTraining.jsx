@@ -5,7 +5,7 @@ import toast from 'react-hot-toast'
 import Card, { CardHeader } from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import Badge from '../components/ui/Badge'
-import GinaTyping from '../components/ui/GinaTyping'
+import KatrinaTyping from '../components/ui/KatrinaTyping'
 import { simulateTyping } from '../lib/openrouter'
 import { isAppDemoMode as DEMO_MODE } from '../lib/runtimeConfig'
 
@@ -97,7 +97,7 @@ This is going to take about 45 minutes, you'll see the Botox kick in over 7–10
 
 ---
 
-*Script developed by Gina's AI — The Med Spa Matchmaker Intelligence Platform*`
+*Script developed by Katrina's AI — Fractional CFO & Scaling Advisory*`
 
 const CONSULT_LESSONS = [
   {
@@ -120,7 +120,7 @@ They walk in like they're greeting a friend who just asked for help. Warm, confi
 - Don't ask "what are you here for?" — it puts them in charge of a conversation they aren't qualified to lead
 - Don't sit behind a desk — it creates physical and psychological distance
 
-**Gina's rule:** If you're not smiling when you walk in, you've already lost 30% of the sale.`,
+    **Katrina's rule:** If your team isn't trained on value-selling, you're giving away 30% of your margins.`,
   },
   {
     num: 2,
@@ -194,7 +194,7 @@ State it clearly. Don't mumble. Don't add "I know it's a lot" or "if that works 
 
 Then pause. Don't speak first. The first person to talk after stating a price is negotiating against themselves.
 
-**Gina's benchmark:** If >30% of patients say yes to your first offer without any objection, you're probably underpriced.`,
+    **Katrina's benchmark:** If >30% of patients say yes to your first offer without objection, your pricing structure is under-modeled.`,
   },
   {
     num: 5,
@@ -248,7 +248,7 @@ Before they leave the treatment room, say:
 **The magic of naming two dates:**
 People don't say "neither." They pick one. This is the most powerful rebooking tool in the industry.
 
-**Gina's stat:** Practices that rebook before the patient leaves see 75%+ rebooking rates. Practices that let patients "call later" see 40–55%.`,
+    **Katrina's stat:** Practices that rebook at checkout see 75%+ rebooking rates, directly compounding lifetime value.`,
   },
 ]
 
@@ -426,7 +426,7 @@ function ScriptGenerator() {
 
       {loading && !output && (
         <div className="flex justify-center py-8">
-          <GinaTyping message="Gina is writing your script..." />
+          <KatrinaTyping message="Katrina is writing your script..." />
         </div>
       )}
     </div>
@@ -573,7 +573,7 @@ function MysteryShop() {
             <div className={`w-7 h-7 rounded-full flex items-center justify-center text-sm flex-shrink-0 ${m.role === 'jamie' ? 'bg-rose-med/20' : 'bg-gray-200'}`}>
               {m.role === 'jamie' ? '🎭' : '💼'}
             </div>
-            <div className={`max-w-lg rounded-2xl px-4 py-3 text-sm ${m.role === 'jamie' ? 'chat-message-gina' : 'chat-message-user'}`}>
+            <div className={`max-w-lg rounded-2xl px-4 py-3 text-sm ${m.role === 'jamie' ? 'chat-message-katrina' : 'chat-message-user'}`}>
               <pre className="whitespace-pre-wrap font-body text-gray-800">{m.content}</pre>
             </div>
           </div>
@@ -581,12 +581,12 @@ function MysteryShop() {
         {streaming && streamMsg && (
           <div className="flex gap-3">
             <div className="w-7 h-7 rounded-full bg-rose-med/20 flex items-center justify-center text-sm">🎭</div>
-            <div className="max-w-lg rounded-2xl px-4 py-3 text-sm chat-message-gina">
+            <div className="max-w-lg rounded-2xl px-4 py-3 text-sm chat-message-katrina">
               <pre className="whitespace-pre-wrap font-body text-gray-800">{streamMsg}</pre>
             </div>
           </div>
         )}
-        {streaming && !streamMsg && <div className="flex gap-3"><div className="w-7 h-7 rounded-full bg-rose-med/20 flex items-center justify-center text-sm">🎭</div><GinaTyping message="Jamie is typing..." /></div>}
+        {streaming && !streamMsg && <div className="flex gap-3"><div className="w-7 h-7 rounded-full bg-rose-med/20 flex items-center justify-center text-sm">🎭</div><KatrinaTyping message="Jamie is typing..." /></div>}
       </div>
 
       {!sessionEnded && (

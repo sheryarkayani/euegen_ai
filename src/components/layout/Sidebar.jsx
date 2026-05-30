@@ -3,7 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   LayoutDashboard, MessageCircle, Activity, Rocket, DollarSign, Target,
-  Users, Palette, Wrench, Scale, TrendingUp, PartyPopper, UserCheck,
+  Users, Palette, Wrench, Scale, TrendingUp, Briefcase, Coins,
   Settings, Phone, ChevronDown, ChevronRight, Lock
 } from 'lucide-react'
 import useAuthStore from '../../store/useAuthStore'
@@ -18,7 +18,7 @@ const NAV_ITEMS = [
   },
   {
     path: '/ask',
-    label: 'Ask Gina',
+    label: 'Ask Katrina',
     icon: MessageCircle,
     tier: 'free',
   },
@@ -115,15 +115,15 @@ const NAV_ITEMS = [
     ],
   },
   {
-    path: '/events',
-    label: 'Event Planner',
-    icon: PartyPopper,
+    path: '/capital-budgeting',
+    label: 'Capital Budgeting',
+    icon: Briefcase,
     tier: 'growth',
   },
   {
-    path: '/employees',
-    label: 'Employee Lifecycle',
-    icon: UserCheck,
+    path: '/compensation-designer',
+    label: 'Compensation Designer',
+    icon: Coins,
     tier: 'growth',
   },
 ]
@@ -142,20 +142,20 @@ function NavItem({ item, userTier }) {
 
   if (item.children) {
     return (
-      <div>
+      <div className="w-full">
         <button
           onClick={() => !locked && setExpanded(!expanded)}
-          className={`sidebar-item w-full flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-left ${
-            isActive ? 'active' : 'text-gray-600'
-          } ${locked ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+          className={`sidebar-item w-full flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg text-left transition-all ${
+            isActive ? 'active text-[#AA7C11] bg-[#C5A059]/8 font-semibold border-l-3 border-[#C5A059]' : 'text-[#57534E] hover:text-[#AA7C11] hover:bg-[#C5A059]/4'
+          } ${locked ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'}`}
         >
           <div className="flex items-center gap-3">
-            <Icon size={16} className={isActive ? 'text-gold-500' : ''} />
-            <span className="text-sm">{item.label}</span>
+            <Icon size={15} className={isActive ? 'text-[#C5A059]' : 'text-[#78716C]'} />
+            <span className="text-sm font-medium tracking-wide">{item.label}</span>
           </div>
           <div className="flex items-center gap-1">
-            {locked && <Lock size={10} className="text-gray-600" />}
-            {!locked && (expanded ? <ChevronDown size={12} /> : <ChevronRight size={12} />)}
+            {locked && <Lock size={9} className="text-[#78716C]" />}
+            {!locked && (expanded ? <ChevronDown size={11} className="text-[#78716C]" /> : <ChevronRight size={11} className="text-[#78716C]" />)}
           </div>
         </button>
 
@@ -167,7 +167,7 @@ function NavItem({ item, userTier }) {
               exit={{ height: 0, opacity: 0 }}
               className="overflow-hidden"
             >
-              <div className="pl-7 py-1 space-y-0.5">
+              <div className="pl-6 py-1 space-y-0.5 border-l border-[#C5A059]/20 ml-5 mt-0.5">
                 {item.children.map((child) => {
                   const childLocked = !hasAccess(userTier, child.tier)
                   return (
@@ -176,17 +176,17 @@ function NavItem({ item, userTier }) {
                       to={childLocked ? '#' : child.path}
                       onClick={e => childLocked && e.preventDefault()}
                       className={({ isActive: ia }) =>
-                        `flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-xs transition-colors ${
+                        `flex items-center justify-between gap-2 px-3 py-1.5 rounded-md text-xs transition-all ${
                           ia && !childLocked
-                            ? 'text-gold-500 bg-gold-500/8'
+                            ? 'text-[#AA7C11] bg-[#C5A059]/10 font-bold'
                             : childLocked
-                            ? 'text-gray-400 cursor-not-allowed'
-                            : 'text-gray-600 hover:text-navy-950 hover:bg-gray-100'
+                            ? 'text-slate-400 cursor-not-allowed'
+                            : 'text-[#57534E] hover:text-[#AA7C11] hover:bg-[#C5A059]/5'
                         }`
                       }
                     >
-                      <span>{child.label}</span>
-                      {childLocked && <Lock size={9} className="text-gray-700" />}
+                      <span className="tracking-wide">{child.label}</span>
+                      {childLocked && <Lock size={8} className="text-slate-400" />}
                     </NavLink>
                   )
                 })}
@@ -200,12 +200,12 @@ function NavItem({ item, userTier }) {
 
   if (locked) {
     return (
-      <div className="sidebar-item flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg opacity-50 cursor-not-allowed">
-        <div className="flex items-center gap-3 text-gray-500">
-          <Icon size={16} />
-          <span className="text-sm">{item.label}</span>
+      <div className="sidebar-item flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg opacity-40 cursor-not-allowed">
+        <div className="flex items-center gap-3 text-slate-400">
+          <Icon size={15} />
+          <span className="text-sm font-medium tracking-wide">{item.label}</span>
         </div>
-        <Lock size={10} className="text-gray-600" />
+        <Lock size={9} className="text-slate-400" />
       </div>
     )
   }
@@ -215,13 +215,17 @@ function NavItem({ item, userTier }) {
       to={item.path}
       end={item.path === '/'}
       className={({ isActive: ia }) =>
-        `sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${
-          ia ? 'active text-gold-600' : 'text-gray-600'
+        `sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${
+          ia ? 'active text-[#AA7C11] bg-[#C5A059]/8 font-semibold border-l-3 border-[#C5A059]' : 'text-[#57534E] hover:text-[#AA7C11] hover:bg-[#C5A059]/4'
         }`
       }
     >
-      <Icon size={16} />
-      <span>{item.label}</span>
+      {({ isActive: ia }) => (
+        <>
+          <Icon size={15} className={ia ? 'text-[#C5A059]' : 'text-[#78716C]'} />
+          <span className="tracking-wide">{item.label}</span>
+        </>
+      )}
     </NavLink>
   )
 }
@@ -232,25 +236,27 @@ export default function Sidebar() {
   const userTier = user?.tier || 'free'
 
   return (
-    <div className="fixed left-0 top-0 h-full w-60 flex flex-col bg-white border-r border-gray-200 shadow-sm">
+    <div className="fixed left-0 top-0 h-full w-60 flex flex-col bg-[#F6F4EE] border-r border-[#C5A059]/20 shadow-sm z-50">
       {/* Logo */}
-      <div className="px-5 py-5 border-b border-gray-200">
+      <div className="px-5 py-5 border-b border-[#C5A059]/20 bg-[#FAF8F5]">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl gold-gradient flex items-center justify-center shadow-lg glow-gold">
-            <span className="font-display font-bold text-navy-950 text-base">G</span>
+          <div className="w-10 h-10 rounded-xl primary-gradient flex items-center justify-center shadow-md relative overflow-hidden group">
+            {/* Reflective light sheen overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <span className="font-display font-extrabold text-white text-lg">K</span>
           </div>
           <div>
-            <p className="font-display font-bold text-navy-950 text-sm leading-tight">Gina's AI</p>
-            <p className="text-xs text-gray-500 leading-tight">Med Spa Intelligence</p>
+            <p className="font-display font-extrabold text-[#1C1917] text-sm leading-tight tracking-wider uppercase">Katrina AI</p>
+            <p className="text-[9px] text-[#AA7C11] font-bold tracking-widest leading-tight">STRATEGIC CFO</p>
           </div>
         </div>
       </div>
 
       {/* Practice context */}
       {practice && (
-        <div className="px-4 py-3 mx-3 mt-3 rounded-lg bg-gold-500/10 border border-gold-500/20">
-          <p className="text-xs font-medium text-gold-700 truncate">{practice.name}</p>
-          <p className="text-xs text-gray-600 truncate">{practice.city}, {practice.state}</p>
+        <div className="px-4 py-3 mx-3 mt-3 rounded-lg bg-[#C5A059]/5 border border-[#C5A059]/15 shadow-inner">
+          <p className="text-xs font-semibold text-[#AA7C11] truncate">{practice.name}</p>
+          <p className="text-[10px] text-[#78716C] truncate mt-0.5">{practice.city}, {practice.state}</p>
         </div>
       )}
 
@@ -260,39 +266,43 @@ export default function Sidebar() {
           <NavItem key={item.path} item={item} userTier={userTier} />
         ))}
 
-        <div className="my-2 divider" />
+        <div className="my-3 divider" />
 
         <NavLink
           to="/settings"
           className={({ isActive }) =>
-            `sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${
-              isActive ? 'active text-gold-600' : 'text-gray-600'
+            `sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${
+              isActive ? 'active text-[#AA7C11] bg-[#C5A059]/8 font-semibold border-l-3 border-[#C5A059]' : 'text-[#57534E] hover:text-[#AA7C11] hover:bg-[#C5A059]/4'
             }`
           }
         >
-          <Settings size={16} />
-          <span>Settings</span>
+          {({ isActive }) => (
+            <>
+              <Settings size={15} className={isActive ? 'text-[#C5A059]' : 'text-[#78716C]'} />
+              <span className="tracking-wide">Settings</span>
+            </>
+          )}
         </NavLink>
       </nav>
 
-      {/* Book with Gina CTA */}
-      <div className="p-3 border-t border-gray-200">
+      {/* Book with Katrina CTA */}
+      <div className="p-3 border-t border-[#C5A059]/20 bg-[#FAF8F5]">
         <a
-          href="https://calendly.com/ginaai/consultation"
+          href="https://www.mavenfp.com/contact-us"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 w-full px-3 py-3 rounded-xl transition-all duration-200 group"
+          className="flex items-center gap-3 w-full px-3 py-3 rounded-xl transition-all duration-300 hover:-translate-y-0.5 border border-[#C5A059]/35 group relative overflow-hidden shadow-sm bg-white"
           style={{
-            background: 'linear-gradient(135deg, rgba(212,168,83,0.12), rgba(232,116,138,0.08))',
-            border: '1px solid rgba(212,168,83,0.2)',
+            background: 'linear-gradient(135deg, rgba(197,160,89,0.12), rgba(197,160,89,0.04))',
           }}
         >
-          <div className="w-8 h-8 rounded-full gold-gradient flex items-center justify-center flex-shrink-0">
-            <Phone size={14} className="text-navy-950" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+          <div className="w-8 h-8 rounded-full gold-gradient flex items-center justify-center flex-shrink-0 shadow-md glow-gold">
+            <Phone size={13} className="text-white" />
           </div>
           <div>
-            <p className="text-xs font-semibold text-gold-700">Book with Gina</p>
-            <p className="text-xs text-gray-600">1:1 Strategy Session</p>
+            <p className="text-xs font-bold text-[#AA7C11]">Book with Katrina</p>
+            <p className="text-[10px] text-[#78716C] mt-0.5">1:1 Strategy Session</p>
           </div>
         </a>
       </div>
