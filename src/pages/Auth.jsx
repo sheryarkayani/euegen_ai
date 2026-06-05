@@ -63,7 +63,7 @@ export default function Auth() {
 
         <div>
           <div className="flex items-center gap-3 mb-16">
-            <div className="w-10 h-10 rounded-xl primary-gradient flex items-center justify-center shadow-lg">
+            <div className="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center shadow-lg">
               <span className="font-display font-bold text-white text-lg">E</span>
             </div>
             <div>
@@ -105,7 +105,7 @@ export default function Auth() {
         <div>
           <div className="glass-card rounded-xl p-4 border border-indigo-500/15 bg-white shadow-sm">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full primary-gradient flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center flex-shrink-0">
                 <span className="font-display font-bold text-white text-xs">E</span>
               </div>
               <div>
@@ -128,7 +128,7 @@ export default function Auth() {
           className="w-full max-w-md"
         >
           <div className="text-center mb-8">
-            <div className="w-12 h-12 rounded-2xl primary-gradient flex items-center justify-center shadow-lg mx-auto mb-4 glow-primary">
+            <div className="w-12 h-12 rounded-2xl bg-[#111111] flex items-center justify-center shadow-lg mx-auto mb-4">
               <span className="font-display font-extrabold text-white text-xl">E</span>
             </div>
             <h2 className="font-display text-2xl font-bold text-navy-950">
