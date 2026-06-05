@@ -235,7 +235,6 @@ export default function Sidebar() {
           </div>
           <div>
             <p className="font-display font-extrabold text-[#111111] text-[15px] leading-tight tracking-wide">Eugene AI</p>
-            <p className="text-[9px] text-[#5850EC] font-bold tracking-widest leading-tight mt-0.5 uppercase">STRATEGIC CFO</p>
           </div>
         </div>
       </div>

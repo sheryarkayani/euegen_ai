@@ -129,7 +129,7 @@ export default function Auth() {
         >
           <div className="text-center mb-8">
             <div className="w-12 h-12 rounded-2xl primary-gradient flex items-center justify-center shadow-lg mx-auto mb-4 glow-primary">
-              <Sparkles size={20} className="text-white" />
+              <span className="font-display font-extrabold text-white text-xl">E</span>
             </div>
             <h2 className="font-display text-2xl font-bold text-navy-950">
               {mode === 'login' ? 'Welcome back' : 'Get started'}
