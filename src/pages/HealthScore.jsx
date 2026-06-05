@@ -244,7 +244,7 @@ function ScoreReport({ report }) {
     import('jspdf').then(({ jsPDF }) => {
       const doc = new jsPDF()
       doc.setFontSize(20)
-      doc.text("Katrina's AI — Health Score Report", 20, 20)
+      doc.text("Eugene's AI — Health Score Report", 20, 20)
       doc.setFontSize(14)
       doc.text(`${report.practice}`, 20, 35)
       doc.setFontSize(12)
@@ -308,15 +308,15 @@ function ScoreReport({ report }) {
         </div>
       </Card>
 
-      {/* Katrina's CFO Assessment */}
+      {/* Eugene's CFO Assessment */}
       <Card>
-        <CardHeader title="Katrina's CFO Assessment" />
+        <CardHeader title="Eugene's CFO Assessment" />
         <div className="space-y-4">
           {Object.entries(report.ginaSays).map(([domain, insight]) => (
             <div key={domain} className="p-4 rounded-xl" style={{ background: 'rgba(99,102,241,0.04)', border: '1px solid rgba(99,102,241,0.12)' }}>
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-5 h-5 rounded-full primary-gradient flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">K</span>
+                  <span className="text-white font-bold text-xs">E</span>
                 </div>
                 <span className="text-xs font-medium text-indigo-600 capitalize">{domainLabels[domain]}</span>
               </div>

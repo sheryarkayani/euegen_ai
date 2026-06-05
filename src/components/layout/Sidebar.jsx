@@ -18,7 +18,7 @@ const NAV_ITEMS = [
   },
   {
     path: '/ask',
-    label: 'Ask Katrina',
+    label: 'Ask Eugene',
     icon: MessageCircle,
     tier: 'free',
   },
@@ -113,18 +113,6 @@ const NAV_ITEMS = [
       { path: '/pe-intel', label: 'PE Readiness', tier: 'scale' },
       { path: '/pe-intel/ebitda', label: 'EBITDA Builder', tier: 'scale' },
     ],
-  },
-  {
-    path: '/capital-budgeting',
-    label: 'Capital Budgeting',
-    icon: Briefcase,
-    tier: 'growth',
-  },
-  {
-    path: '/compensation-designer',
-    label: 'Compensation Designer',
-    icon: Coins,
-    tier: 'growth',
   },
 ]
 
@@ -243,10 +231,10 @@ export default function Sidebar() {
       <div className="px-5 py-5 border-b border-[#E5E7EB] bg-white">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-lg bg-[#111111] flex items-center justify-center shadow-sm relative overflow-hidden">
-            <span className="font-display font-extrabold text-white text-lg">K</span>
+            <span className="font-display font-extrabold text-white text-lg">E</span>
           </div>
           <div>
-            <p className="font-display font-extrabold text-[#111111] text-[15px] leading-tight tracking-wide">Katrina AI</p>
+            <p className="font-display font-extrabold text-[#111111] text-[15px] leading-tight tracking-wide">Eugene AI</p>
             <p className="text-[9px] text-[#5850EC] font-bold tracking-widest leading-tight mt-0.5 uppercase">STRATEGIC CFO</p>
           </div>
         </div>
@@ -285,10 +273,10 @@ export default function Sidebar() {
         </NavLink>
       </nav>
 
-      {/* Book with Katrina CTA */}
+      {/* Book with Eugene CTA */}
       <div className="p-3 border-t border-[#E5E7EB] bg-white">
         <a
-          href="https://www.mavenfp.com/contact-us"
+          href="https://www.eugenekconsulting.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 w-full px-3 py-3 rounded-lg border border-[#E5E7EB] transition-all duration-200 hover:bg-[#F9F9FB] shadow-sm bg-white"
@@ -297,7 +285,7 @@ export default function Sidebar() {
             <Phone size={14} className="text-[#5850EC]" />
           </div>
           <div>
-            <p className="text-xs font-bold text-[#111111]">Book with Katrina</p>
+            <p className="text-xs font-bold text-[#111111]">Book with Eugene</p>
             <p className="text-[10px] text-[#6B7280] mt-0.5">1:1 Strategy Session</p>
           </div>
         </a>

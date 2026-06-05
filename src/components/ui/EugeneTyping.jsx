@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion'
 
-export default function KatrinaTyping({ message = "Katrina is thinking..." }) {
+export default function EugeneTyping({ message = "Eugene is thinking..." }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
-      className="flex items-center gap-3 py-3 px-4 chat-message-katrina rounded-xl max-w-xs"
+      className="flex items-center gap-3 py-3 px-4 chat-message-eugene rounded-xl max-w-xs"
     >
       {/* Avatar */}
       <div className="w-8 h-8 rounded-full primary-gradient flex items-center justify-center flex-shrink-0 shadow-lg glow-primary">
-        <span className="text-xs font-bold text-white font-display">K</span>
+        <span className="text-xs font-bold text-white font-display">E</span>
       </div>
 
       <div className="flex items-center gap-3">

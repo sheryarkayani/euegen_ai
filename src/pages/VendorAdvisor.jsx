@@ -15,7 +15,7 @@ const VENDORS = [
     cons: ['Higher price point', 'Proprietary tips (ongoing cost)', 'Sales pressure can be aggressive'],
     roiTimeframe: '12–18 months',
     avgRevenuePerTx: '$800–$2,500',
-    katrinaNote: 'InMode\'s Morpheus8 is a clear market-share leader with robust consumer demand. However, ensure your direct consumable tips cost ($80–$120 per treatment) is modeled accurately in your pricing structure to protect direct labor margins.',
+    eugeneNote: 'InMode\'s Morpheus8 is a clear market-share leader with robust consumer demand. However, ensure your direct consumable tips cost ($80–$120 per treatment) is modeled accurately in your pricing structure to protect direct labor margins.',
     color: '#6366f1',
   },
   {
@@ -28,7 +28,7 @@ const VENDORS = [
     cons: ['Account minimums required for best pricing', 'Rep availability varies by region', 'Certain SKUs have supply issues'],
     roiTimeframe: 'Immediate',
     avgRevenuePerTx: '$750–$1,800',
-    katrinaNote: 'Excellent portfolio depth. Restylane and Sculptra offer outstanding gross margin retention (up to 78%). Focus on leveraging ASPIRE tier rebates aggressively to offset direct supply opex.',
+    eugeneNote: 'Excellent portfolio depth. Restylane and Sculptra offer outstanding gross margin retention (up to 78%). Focus on leveraging ASPIRE tier rebates aggressively to offset direct supply opex.',
     color: '#8b5cf6',
   },
   {
@@ -41,7 +41,7 @@ const VENDORS = [
     cons: ['Higher price on Botox vs Dysport', 'Less flexible account terms for new practices', 'Rep quality varies widely'],
     roiTimeframe: 'Immediate',
     avgRevenuePerTx: '$750–$1,600',
-    katrinaNote: 'Allergan accounts are non-negotiable for brand presence. Treat Botox as a customer acquisition leader, but cross-sell premium dermal filler packages to maximize your per-visit EBITDA.',
+    eugeneNote: 'Allergan accounts are non-negotiable for brand presence. Treat Botox as a customer acquisition leader, but cross-sell premium dermal filler packages to maximize your per-visit EBITDA.',
     color: '#ec4899',
   },
   {
@@ -54,7 +54,7 @@ const VENDORS = [
     cons: ['Highest upfront cost', 'Larger footprint', 'Less flexible financing vs InMode', 'Training investment required'],
     roiTimeframe: '18–24 months',
     avgRevenuePerTx: '$600–$2,000',
-    katrinaNote: 'Halo and BBL are absolute workhorses with massive revenue capacity. However, at a $150K+ capex threshold, you need at least 15 treatments per month to meet target debt-service coverage ratio (DSCR) safety limits.',
+    eugeneNote: 'Halo and BBL are absolute workhorses with massive revenue capacity. However, at a $150K+ capex threshold, you need at least 15 treatments per month to meet target debt-service coverage ratio (DSCR) safety limits.',
     color: '#10b981',
   },
   {
@@ -67,7 +67,7 @@ const VENDORS = [
     cons: ['Less buzz than InMode or Sciton in aesthetics', 'Rep support inconsistent', 'Some devices showing age'],
     roiTimeframe: '12–18 months',
     avgRevenuePerTx: '$300–$1,200',
-    katrinaNote: 'GentleMax Pro for hair removal is a proven workhorse — if you do high volume hair removal, the ROI is solid. However, for the prestige RF microneedling and fractional laser market, InMode and Sciton have captured more mindshare.',
+    eugeneNote: 'GentleMax Pro for hair removal is a proven workhorse — if you do high volume hair removal, the ROI is solid. However, for the prestige RF microneedling and fractional laser market, InMode and Sciton have captured more mindshare.',
     color: '#f59e0b',
   },
 ]
@@ -126,7 +126,7 @@ function ROICalculator() {
       {typeof paybackMonths === 'number' && (
         <div className="mt-3 p-3 rounded-xl" style={{ background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.15)' }}>
           <p className="text-xs text-gray-700 font-body">
-            <span className="text-indigo-600 font-semibold">Katrina's CFO take: </span>
+            <span className="text-indigo-600 font-semibold">Eugene's CFO take: </span>
             {paybackMonths <= 12 ? '✓ Excellent ROI — go for it if the market demand exists.' :
              paybackMonths <= 18 ? '✓ Good ROI — standard for aesthetics equipment. Proceed with confidence.' :
              paybackMonths <= 24 ? '⚠ Above-average payback — make sure you have the patient volume before committing.' :
@@ -211,9 +211,9 @@ export default function VendorAdvisor({ tab }) {
                   <div className="p-3 rounded-xl" style={{ background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.15)' }}>
                     <div className="flex items-start gap-2">
                       <div className="w-5 h-5 rounded-full primary-gradient flex items-center justify-center flex-shrink-0">
-                        <span className="text-white font-bold text-xs">K</span>
+                        <span className="text-white font-bold text-xs">E</span>
                       </div>
-                      <p className="text-xs text-gray-700 leading-relaxed font-body font-medium">{vendor.katrinaNote}</p>
+                      <p className="text-xs text-gray-700 leading-relaxed font-body font-medium">{vendor.eugeneNote}</p>
                     </div>
                   </div>
                   <div className="flex gap-3 text-xs text-gray-500">

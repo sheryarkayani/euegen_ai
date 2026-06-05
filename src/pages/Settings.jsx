@@ -15,7 +15,7 @@ const TIERS = [
     price: '$0',
     icon: Star,
     color: '#9b94a8',
-    features: ['Ask Katrina (5 questions/month)', 'Health Score Intake', 'Dashboard', 'Settings'],
+    features: ['Ask Eugene (5 questions/month)', 'Health Score Intake', 'Dashboard', 'Settings'],
   },
   {
     key: 'starter',
@@ -23,7 +23,7 @@ const TIERS = [
     price: '$97/mo',
     icon: Star,
     color: '#6366f1',
-    features: ['Ask Katrina (25 questions/month)', 'Health Score Reports', 'Launch Center', 'Vendor Advisor'],
+    features: ['Ask Eugene (25 questions/month)', 'Health Score Reports', 'Launch Center', 'Vendor Advisor'],
   },
   {
     key: 'growth',
@@ -31,7 +31,7 @@ const TIERS = [
     price: '$297/mo',
     icon: Zap,
     color: '#8b5cf6',
-    features: ['Unlimited Ask Katrina', 'All Starter features', 'Financial KPI Dashboard', 'Sales Training', 'Hiring Suite', 'Marketing Studio', 'Compliance Center', 'Event Planner', 'Employee Lifecycle'],
+    features: ['Unlimited Ask Eugene', 'All Starter features', 'Financial KPI Dashboard', 'Sales Training', 'Hiring Suite', 'Marketing Studio', 'Compliance Center', 'Event Planner', 'Employee Lifecycle'],
     popular: true,
   },
   {
@@ -40,7 +40,7 @@ const TIERS = [
     price: '$597/mo',
     icon: Crown,
     color: '#ef4444',
-    features: ['All Growth features', 'Mystery Shopper AI', 'PE Intelligence', 'Priority Support', 'Monthly 1:1 with Katrina'],
+    features: ['All Growth features', 'Mystery Shopper AI', 'PE Intelligence', 'Priority Support', 'Monthly 1:1 with Eugene'],
   },
 ]
 

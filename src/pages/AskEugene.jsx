@@ -4,10 +4,10 @@ import { Send, Sparkles, RefreshCw } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import toast from 'react-hot-toast'
 import useChatStore from '../store/useChatStore'
-import KatrinaTyping from '../components/ui/KatrinaTyping'
-import { BookKatrinaInline } from '../components/shared/BookKatrinaCard'
+import EugeneTyping from '../components/ui/EugeneTyping'
+import { BookEugeneInline } from '../components/shared/BookEugeneCard'
 import { simulateTyping, streamCompletion } from '../lib/openrouter'
-import { ASK_KATRINA_SYSTEM_PROMPT } from '../lib/prompts/askKatrina'
+import { ASK_EUGENE_SYSTEM_PROMPT } from '../lib/prompts/askEugene'
 import { dummyAskGinaResponses } from '../data/dummyHealthScore' // Reused response mapping for compatibility
 import { isAppDemoMode as DEMO_MODE } from '../lib/runtimeConfig'
 
@@ -19,13 +19,13 @@ const STARTER_PROMPTS = [
   "How do I set up a compliant MSO structure in Texas?",
 ]
 
-function KatrinaAvatar({ size = 32 }) {
+function EugeneAvatar({ size = 32 }) {
   return (
     <div
       className="rounded-full primary-gradient flex items-center justify-center flex-shrink-0 shadow-lg glow-primary"
       style={{ width: size, height: size }}
     >
-      <span className="font-display font-bold text-white" style={{ fontSize: size * 0.35 }}>K</span>
+      <span className="font-display font-bold text-white" style={{ fontSize: size * 0.35 }}>E</span>
     </div>
   )
 }
@@ -38,7 +38,7 @@ function MessageBubble({ message }) {
       animate={{ opacity: 1, y: 0 }}
       className={`flex gap-3 ${isUser ? 'flex-row-reverse' : 'flex-row'}`}
     >
-      {!isUser && <KatrinaAvatar />}
+      {!isUser && <EugeneAvatar />}
       {isUser && (
         <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
           <span className="text-xs font-medium text-navy-950">You</span>
@@ -47,7 +47,7 @@ function MessageBubble({ message }) {
       <div className={`max-w-2xl ${isUser ? 'items-end' : 'items-start'} flex flex-col`}>
         <div
           className={`rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-            isUser ? 'chat-message-user rounded-tr-sm' : 'chat-message-katrina rounded-tl-sm'
+            isUser ? 'chat-message-user rounded-tr-sm' : 'chat-message-eugene rounded-tl-sm'
           }`}
         >
           {isUser ? (
@@ -70,13 +70,13 @@ function MessageBubble({ message }) {
         <span className="text-xs text-gray-400 mt-1 px-1">
           {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </span>
-        {message.escalate && <BookKatrinaInline />}
+        {message.escalate && <BookEugeneInline />}
       </div>
     </motion.div>
   )
 }
 
-export default function AskKatrina() {
+export default function AskEugene() {
   const { messages, isStreaming, streamingMessage, addMessage, setStreaming, appendToStreamingMessage, finalizeStreamingMessage, clearMessages } = useChatStore()
   const [input, setInput] = useState('')
   const [typingCancel, setTypingCancel] = useState(null)
@@ -95,11 +95,11 @@ export default function AskKatrina() {
     )
     
     if (match) {
-      // Rebrand the placeholder answers in demo mode on-the-fly to represent Katrina
+      // Rebrand the placeholder answers in demo mode on-the-fly to represent Eugene
       let customAnswer = match.answer
-        .replaceAll("Gina's AI", "Katrina's AI")
-        .replaceAll("Gina", "Katrina")
-        .replaceAll("med spa matchmaker", "Maven Financial Partners")
+        .replaceAll("Gina's AI", "Eugene's AI")
+        .replaceAll("Gina", "Eugene")
+        .replaceAll("med spa matchmaker", "Eugene Consulting")
       return { ...match, answer: customAnswer }
     }
     
@@ -151,7 +151,7 @@ Let's model the direct financial pathways to optimize your EBITDA margins.
     // Real API call
     try {
       await streamCompletion({
-        systemPrompt: ASK_KATRINA_SYSTEM_PROMPT,
+        systemPrompt: ASK_EUGENE_SYSTEM_PROMPT,
         messages: [...messages, userMsg].map(m => ({ role: m.role, content: m.content })),
         onChunk: appendToStreamingMessage,
       })
@@ -179,9 +179,9 @@ Let's model the direct financial pathways to optimize your EBITDA margins.
           className="flex-1 flex flex-col items-center justify-center p-8 text-center"
         >
           <div className="w-20 h-20 rounded-2xl primary-gradient flex items-center justify-center shadow-2xl glow-primary-strong mb-6">
-            <span className="font-display font-bold text-white text-3xl">K</span>
+            <span className="font-display font-bold text-white text-3xl">E</span>
           </div>
-          <h2 className="font-display text-2xl font-bold text-navy-950 mb-2">Ask Katrina</h2>
+          <h2 className="font-display text-2xl font-bold text-navy-950 mb-2">Ask Eugene</h2>
           <p className="text-gray-500 max-w-md leading-relaxed mb-8 text-sm font-body">
             Strategic aesthetics CFO and operational Due Diligence advisor, available 24/7. 
             Ask about provider compensation models, EBITDA maximization, cash flow forecasting, and MSO compliance.
@@ -223,9 +223,9 @@ Let's model the direct financial pathways to optimize your EBITDA margins.
               animate={{ opacity: 1, y: 0 }}
               className="flex gap-3"
             >
-              <KatrinaAvatar />
+              <EugeneAvatar />
               <div className="max-w-2xl">
-                <div className="chat-message-katrina rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed">
+                <div className="chat-message-eugene rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed">
                   <div className="prose prose-sm prose-stone max-w-none text-gray-800">
                     <ReactMarkdown
                       components={{
@@ -246,8 +246,8 @@ Let's model the direct financial pathways to optimize your EBITDA margins.
           {/* Typing indicator */}
           {isStreaming && !streamingMessage && (
             <div className="flex gap-3">
-              <KatrinaAvatar />
-              <KatrinaTyping />
+              <EugeneAvatar />
+              <EugeneTyping />
             </div>
           )}
 
@@ -275,7 +275,7 @@ Let's model the direct financial pathways to optimize your EBITDA margins.
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={handleKey}
-              placeholder="Ask Katrina about compensation, EBITDA, MSO structures..."
+              placeholder="Ask Eugene about compensation, EBITDA, MSO structures..."
               rows={1}
               style={{
                 minHeight: '48px',

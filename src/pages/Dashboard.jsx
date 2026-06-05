@@ -16,9 +16,7 @@ import Badge from '../components/ui/Badge'
 import Button from '../components/ui/Button'
 
 const QUICK_ACTIONS = [
-  { label: 'Ask Katrina AI', path: '/ask', icon: MessageCircle, color: '#5850EC', desc: 'Get instant CFO advisory' },
-  { label: 'Capital Budgeting', path: '/capital-budgeting', icon: Building, color: '#059669', desc: 'SBA loan & buildout modeling' },
-  { label: 'Compensation Designer', path: '/compensation-designer', icon: DollarSign, color: '#F97316', desc: 'Audit direct labor profitability' },
+  { label: 'Ask Eugene AI', path: '/ask', icon: MessageCircle, color: '#5850EC', desc: 'Get instant CFO advisory' },
   { label: 'PC-MSO Compliance', path: '/compliance', icon: Activity, color: '#EC4899', desc: 'Simulate legal fee flow ledgers' },
 ]
 
@@ -99,7 +97,7 @@ export default function Dashboard() {
         }} />
 
         <div className="max-w-3xl mx-auto space-y-5 relative z-10">
-          <Badge variant="purple" className="px-3 py-1 text-xs">Katrina CFO Suite</Badge>
+          <Badge variant="purple" className="px-3 py-1 text-xs">Eugene CFO Suite</Badge>
           
           <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-none font-display">
             Meet the executive desk.
@@ -115,7 +113,7 @@ export default function Dashboard() {
               className="btn-primary px-6 py-3 font-semibold text-sm hover:scale-[1.01] active:scale-[0.99] transition-all"
             >
               <MessageCircle size={15} />
-              Ask Katrina Free
+              Ask Eugene Free
             </button>
             
             <button 
@@ -135,7 +133,7 @@ export default function Dashboard() {
                 <div className="w-3 h-3 rounded-full bg-[#EF4444]" />
                 <div className="w-3 h-3 rounded-full bg-[#F59E0B]" />
                 <div className="w-3 h-3 rounded-full bg-[#10B981]" />
-                <span className="text-xs text-[#6B7280] font-semibold ml-2">Katrina AI Workspace / Practice Health Suite</span>
+                <span className="text-xs text-[#6B7280] font-semibold ml-2">Eugene AI Workspace / Practice Health Suite</span>
               </div>
               <Badge variant="gold">EMR Verified Live Sync</Badge>
             </div>
@@ -173,7 +171,7 @@ export default function Dashboard() {
           <div className="text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-extrabold text-[#111111] font-display flex items-center justify-center md:justify-start gap-2">
               <Layers size={22} className="text-[#5850EC]" />
-              Maven CFO Methodology Studio
+              Eugene Consulting Methodology Studio
             </h2>
             <p className="text-sm text-[#4B5563] mt-1">Explore our structured tactical playbook for aesthetic business scale.</p>
           </div>
@@ -215,13 +213,6 @@ export default function Dashboard() {
                       <p className="text-xs md:text-sm text-[#4B5563] leading-relaxed">
                         Med-spa expansion shouldn't rely on gut feelings. We forecast lease requirements, provider onboarding curves, and capex budgets up-front to ensure profitability on day one.
                       </p>
-                      <button 
-                        onClick={() => navigate('/capital-budgeting')}
-                        className="btn-primary mt-2 text-xs font-semibold"
-                      >
-                        Go to Capital Budgeting Studio
-                        <ArrowRight size={13} />
-                      </button>
                     </div>
                     <div className="p-4 bg-white border border-[#E5E7EB] rounded-lg space-y-3 shadow-sm">
                       <div className="flex justify-between text-xs font-bold text-[#222222]">
@@ -281,13 +272,6 @@ export default function Dashboard() {
                       <p className="text-xs md:text-sm text-[#4B5563] leading-relaxed">
                         Every dollar out must be accounted for. We build tight operational spend-ratio safety boundaries. If supplies exceed 22% or rent climbs past 8%, your EBITDA targets immediately trigger CFO warnings.
                       </p>
-                      <button 
-                        onClick={() => navigate('/compensation-designer')}
-                        className="btn-primary mt-2 text-xs font-semibold"
-                      >
-                        Manage Provider Labor Budget
-                        <ArrowRight size={13} />
-                      </button>
                     </div>
                     <div className="p-4 bg-white border border-[#E5E7EB] rounded-lg space-y-3 shadow-sm">
                       <div className="flex justify-between text-xs font-bold text-[#222222]">

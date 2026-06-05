@@ -3,7 +3,7 @@ import { TrendingUp, Calculator, CheckCircle, Circle, AlertTriangle, Info } from
 import Card, { CardHeader } from '../components/ui/Card'
 import Badge from '../components/ui/Badge'
 import ScoreRing from '../components/ui/ScoreRing'
-import { BookKatrinaInline } from '../components/shared/BookKatrinaCard'
+import { BookEugeneInline } from '../components/shared/BookEugeneCard'
 
 const PE_READINESS_CRITERIA = [
   { category: 'Financial Performance', weight: 35, items: [
@@ -85,7 +85,7 @@ function EBITDAMultipleCalc() {
         </p>
       </div>
 
-      <BookKatrinaInline />
+      <BookEugeneInline />
     </Card>
   )
 }
@@ -148,7 +148,7 @@ export default function PEIntelligence({ tab }) {
             </Card>
           ))}
 
-          <BookKatrinaInline />
+          <BookEugeneInline />
         </div>
       )}
 

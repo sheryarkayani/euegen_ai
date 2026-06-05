@@ -48,7 +48,7 @@ export default function UpgradeWall({ requiredTier = 'growth', feature = 'this f
         </h2>
         <p className="text-gray-400 text-sm leading-relaxed mb-6">
           {feature} is available on the <strong style={{ color }}>{requiredTier}</strong> plan and above.
-          Unlock the full power of Katrina's CFO intelligence platform.
+          Unlock the full power of Eugene's CFO intelligence platform.
         </p>
 
         {features.length > 0 && (

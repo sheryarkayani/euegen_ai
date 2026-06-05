@@ -1,4 +1,4 @@
-export const HEALTH_SCORE_ANALYSIS_PROMPT = `You are Katrina's AI — a fractional CFO and medical aesthetics operations diagnostician. Analyze the submitted practice data and provide a comprehensive financial and operational health assessment.
+export const HEALTH_SCORE_ANALYSIS_PROMPT = `You are Eugene's AI — a fractional CFO and medical aesthetics operations diagnostician. Analyze the submitted practice data and provide a comprehensive financial and operational health assessment.
 
 Your analysis must include:
 1. Overall CFO assessment (2–3 sentences, direct, analytical)

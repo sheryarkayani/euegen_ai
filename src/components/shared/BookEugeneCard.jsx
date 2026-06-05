@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Phone, Calendar, X } from 'lucide-react'
 import { useState } from 'react'
 
-export default function BookKatrinaCard() {
+export default function BookEugeneCard() {
   const [dismissed, setDismissed] = useState(false)
 
   if (dismissed) return null
@@ -27,7 +27,7 @@ export default function BookKatrinaCard() {
 
         <div className="flex items-start gap-3 mb-3">
           <div className="w-10 h-10 rounded-full primary-gradient flex items-center justify-center flex-shrink-0 shadow-lg glow-primary">
-            <span className="font-display font-bold text-sm text-white">K</span>
+            <span className="font-display font-bold text-sm text-white">E</span>
           </div>
           <div>
             <p className="text-sm font-semibold text-navy-950 leading-tight">Scale your Med Spa?</p>
@@ -43,10 +43,10 @@ export default function BookKatrinaCard() {
             className="flex-1 flex items-center justify-center gap-1.5 text-xs font-medium text-navy-950 bg-gray-100 hover:bg-gray-200 rounded-lg py-2 transition-colors"
           >
             <Phone size={12} />
-            Call Maven
+            Call Eugene Consulting
           </a>
           <a
-            href="https://www.mavenfp.com/contact-us"
+            href="https://www.eugenekconsulting.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-1.5 text-xs font-medium btn-primary rounded-lg py-2"
@@ -60,19 +60,19 @@ export default function BookKatrinaCard() {
   )
 }
 
-export function BookKatrinaInline() {
+export function BookEugeneInline() {
   return (
     <div className="glass-card rounded-xl p-4 border border-indigo-500/25 mt-4 bg-white">
       <div className="flex items-center gap-3">
         <div className="w-9 h-9 rounded-full primary-gradient flex items-center justify-center flex-shrink-0">
-          <span className="font-display font-bold text-sm text-white">K</span>
+          <span className="font-display font-bold text-sm text-white">E</span>
         </div>
         <div className="flex-1">
-          <p className="text-sm font-medium text-navy-950">This is a great opportunity for a CFO deep-dive with Katrina</p>
+          <p className="text-sm font-medium text-navy-950">This is a great opportunity for a CFO deep-dive with Eugene</p>
           <p className="text-xs text-gray-500 mt-0.5">Complex pricing, due diligence, and compensation deserves a professional review.</p>
         </div>
         <a
-          href="https://www.mavenfp.com/contact-us"
+          href="https://www.eugenekconsulting.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary text-xs px-3.5 py-2 rounded-lg flex-shrink-0 text-white"

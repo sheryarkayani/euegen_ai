@@ -40,7 +40,7 @@ export default function Auth() {
         if (error) {
           toast.error(error.message || 'Sign up failed')
         } else {
-          toast.success("Account created! Welcome to Katrina's AI")
+          toast.success("Account created! Welcome to Eugene's AI")
           navigate('/')
         }
       }
@@ -64,10 +64,10 @@ export default function Auth() {
         <div>
           <div className="flex items-center gap-3 mb-16">
             <div className="w-10 h-10 rounded-xl primary-gradient flex items-center justify-center shadow-lg">
-              <span className="font-display font-bold text-white text-lg">K</span>
+              <span className="font-display font-bold text-white text-lg">E</span>
             </div>
             <div>
-              <p className="font-display font-bold text-navy-950">Katrina AI</p>
+              <p className="font-display font-bold text-navy-950">Eugene AI</p>
               <p className="text-xs text-gray-500">Fractional CFO & Intelligence Platform</p>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function Auth() {
           </h1>
           <p className="text-gray-500 leading-relaxed mb-10 text-sm font-body">
             MBA-grade medical aesthetics financial modeling, benchmarks from top-performing practices, 
-            and Katrina's exact financial frameworks — available 24/7, on demand.
+            and Eugene's exact financial frameworks — available 24/7, on demand.
           </p>
 
           <div className="space-y-4">
@@ -106,14 +106,14 @@ export default function Auth() {
           <div className="glass-card rounded-xl p-4 border border-indigo-500/15 bg-white shadow-sm">
             <div className="flex items-start gap-3">
               <div className="w-8 h-8 rounded-full primary-gradient flex items-center justify-center flex-shrink-0">
-                <span className="font-display font-bold text-white text-xs">K</span>
+                <span className="font-display font-bold text-white text-xs">E</span>
               </div>
               <div>
                 <p className="text-sm text-gray-600 italic leading-relaxed font-body">
                   "Your payroll at 45.5% isn't just a staffing issue — it's an EBITDA leak. 
                   Let's pull the direct labor margins and align provider comp with structured tiers."
                 </p>
-                <p className="text-xs text-indigo-600 font-bold mt-2">— Katrina's AI, responding to a real client</p>
+                <p className="text-xs text-indigo-600 font-bold mt-2">— Eugene's AI, responding to a real client</p>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Auth() {
             <p className="text-gray-400 text-sm mt-2 font-body">
               {mode === 'login'
                 ? 'Sign in to your strategic intelligence platform'
-                : "Create your Katrina's AI account"}
+                : "Create your Eugene's AI account"}
             </p>
           </div>
 

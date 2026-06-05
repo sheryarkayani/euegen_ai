@@ -12,11 +12,11 @@ const PHASES = [
     title: 'Legal & Business Foundation',
     color: '#6366F1',
     items: [
-      { id: 'llc', text: 'Form LLC or PC (consult healthcare attorney for your state)', katrina: 'In most states, med spas must be owned by a licensed physician or operate under an MSO structure. Texas, for example, requires the medical director to own the clinical entity. Do NOT skip this step — the wrong entity structure can shut you down. Budget $1,500–$3,000 for proper legal setup. I recommend healthcare specialized legal groups.\n\nNext step: Book a 30-min consultation with a healthcare attorney before you sign any leases.' },
-      { id: 'ein', text: 'Obtain EIN from IRS (15 minutes at IRS.gov)', katrina: 'This is free and takes 15 minutes at irs.gov. Do it today. You need it for your business bank account, payroll, and vendor accounts.\n\nNext step: Go to IRS.gov right now and apply. Keep your EIN in a secure password manager.' },
-      { id: 'bank', text: 'Open dedicated business bank account', katrina: 'Never mix personal and business funds. Open a dedicated business checking account at a local bank or credit union — better rates than big banks. You\'ll also want a separate credit card for supply purchases (points add up fast on injectables).\n\nNext step: Call your local bank this week and book a business account opening appointment.' },
-      { id: 'malpractice', text: 'Secure malpractice insurance ($1M/$3M minimum)', katrina: 'Do not open your doors without this. For a med spa with a nurse injector, you need minimum $1M per occurrence / $3M aggregate. Budget $8,000–$15,000/year. CM&F Group, Coverys, and OMIC are top-rated. Your medical director needs separate coverage as well.\n\nNext step: Get quotes from at least 3 carriers before choosing. The cheapest is not always the right choice.' },
-      { id: 'meddir', text: 'Execute Medical Director agreement', katrina: 'Your medical director agreement should define: oversight frequency (minimum monthly), compensation (typically $2,000–$5,000/month for a single location), liability responsibilities, and termination terms. Get this reviewed by a healthcare attorney — standard contracts from the internet are dangerous here.\n\nNext step: Do not begin operations without a signed, attorney-reviewed MDA.' },
+      { id: 'llc', text: 'Form LLC or PC (consult healthcare attorney for your state)', eugene: 'In most states, med spas must be owned by a licensed physician or operate under an MSO structure. Texas, for example, requires the medical director to own the clinical entity. Do NOT skip this step — the wrong entity structure can shut you down. Budget $1,500–$3,000 for proper legal setup. I recommend healthcare specialized legal groups.\n\nNext step: Book a 30-min consultation with a healthcare attorney before you sign any leases.' },
+      { id: 'ein', text: 'Obtain EIN from IRS (15 minutes at IRS.gov)', eugene: 'This is free and takes 15 minutes at irs.gov. Do it today. You need it for your business bank account, payroll, and vendor accounts.\n\nNext step: Go to IRS.gov right now and apply. Keep your EIN in a secure password manager.' },
+      { id: 'bank', text: 'Open dedicated business bank account', eugene: 'Never mix personal and business funds. Open a dedicated business checking account at a local bank or credit union — better rates than big banks. You\'ll also want a separate credit card for supply purchases (points add up fast on injectables).\n\nNext step: Call your local bank this week and book a business account opening appointment.' },
+      { id: 'malpractice', text: 'Secure malpractice insurance ($1M/$3M minimum)', eugene: 'Do not open your doors without this. For a med spa with a nurse injector, you need minimum $1M per occurrence / $3M aggregate. Budget $8,000–$15,000/year. CM&F Group, Coverys, and OMIC are top-rated. Your medical director needs separate coverage as well.\n\nNext step: Get quotes from at least 3 carriers before choosing. The cheapest is not always the right choice.' },
+      { id: 'meddir', text: 'Execute Medical Director agreement', eugene: 'Your medical director agreement should define: oversight frequency (minimum monthly), compensation (typically $2,000–$5,000/month for a single location), liability responsibilities, and termination terms. Get this reviewed by a healthcare attorney — standard contracts from the internet are dangerous here.\n\nNext step: Do not begin operations without a signed, attorney-reviewed MDA.' },
     ],
   },
   {
@@ -24,10 +24,10 @@ const PHASES = [
     title: 'Facility & Equipment',
     color: '#8B5CF6',
     items: [
-      { id: 'space', text: 'Sign commercial lease (negotiate 3–5 year term with renewal option)', katrina: 'Negotiate hard on your lease. Ask for 2–3 months free rent for buildout. Target spaces between 1,200–2,500 sq ft for a single location. Rent should be <10% of projected revenue at stabilization. If your rent is $8K/month, you need to hit $80K+/month in revenue to be healthy.\n\nNext step: Have a commercial real estate attorney review ANY lease before you sign.' },
-      { id: 'buildout', text: 'Complete buildout / tenant improvements', katrina: 'Budget $100–$200 per square foot for a proper med spa buildout. Do not cut corners on the treatment rooms — patients notice. You need proper HVAC for laser equipment, a consult room separate from treatment rooms, and a reception area that matches your brand.\n\nNext step: Get 3 quotes from contractors with med spa buildout experience.' },
-      { id: 'equipment', text: 'Purchase/finance core equipment (laser, body contouring)', katrina: 'For a day-one med spa, I recommend starting with: Botox/filler tray setup, a quality RF microneedling device, and one body contouring platform. Resist the urge to buy everything — you can add equipment as revenue justifies it. InMode and Sciton offer financing; InMode is more flexible for startups.\n\nNext step: Do the ROI math before any equipment purchase: (treatments per month × price per treatment) ÷ monthly payment = payback period. Target <18 months.' },
-      { id: 'emr', text: 'Set up EMR system (Boulevard recommended)', katrina: 'Boulevard is my top recommendation for growth-oriented practices — excellent patient communication tools, strong reporting, and the best front desk workflow I\'ve seen. PatientNow is better if you need more clinical documentation. Budget $300–$600/month.\n\nNext step: Book demos with Boulevard and one other system before committing.' },
+      { id: 'space', text: 'Sign commercial lease (negotiate 3–5 year term with renewal option)', eugene: 'Negotiate hard on your lease. Ask for 2–3 months free rent for buildout. Target spaces between 1,200–2,500 sq ft for a single location. Rent should be <10% of projected revenue at stabilization. If your rent is $8K/month, you need to hit $80K+/month in revenue to be healthy.\n\nNext step: Have a commercial real estate attorney review ANY lease before you sign.' },
+      { id: 'buildout', text: 'Complete buildout / tenant improvements', eugene: 'Budget $100–$200 per square foot for a proper med spa buildout. Do not cut corners on the treatment rooms — patients notice. You need proper HVAC for laser equipment, a consult room separate from treatment rooms, and a reception area that matches your brand.\n\nNext step: Get 3 quotes from contractors with med spa buildout experience.' },
+      { id: 'equipment', text: 'Purchase/finance core equipment (laser, body contouring)', eugene: 'For a day-one med spa, I recommend starting with: Botox/filler tray setup, a quality RF microneedling device, and one body contouring platform. Resist the urge to buy everything — you can add equipment as revenue justifies it. InMode and Sciton offer financing; InMode is more flexible for startups.\n\nNext step: Do the ROI math before any equipment purchase: (treatments per month × price per treatment) ÷ monthly payment = payback period. Target <18 months.' },
+      { id: 'emr', text: 'Set up EMR system (Boulevard recommended)', eugene: 'Boulevard is my top recommendation for growth-oriented practices — excellent patient communication tools, strong reporting, and the best front desk workflow I\'ve seen. PatientNow is better if you need more clinical documentation. Budget $300–$600/month.\n\nNext step: Book demos with Boulevard and one other system before committing.' },
     ],
   },
   {
@@ -35,10 +35,10 @@ const PHASES = [
     title: 'Licensing & Compliance',
     color: '#10B981',
     items: [
-      { id: 'state-lic', text: 'Obtain state business license and medical spa permit', katrina: 'Requirements vary dramatically by state. Texas is relatively permissive; California and New York are heavily regulated. Your local health department may require an inspection before opening. This process takes 4–12 weeks in most states — start early.\n\nNext step: Go to your state medical board website today and download the med spa licensing checklist.' },
-      { id: 'dea', text: 'Confirm DEA registration for controlled substances (if applicable)', katrina: 'If your practice will use any controlled substances (certain topical anesthetics, weight loss medications), your medical director must have an active DEA registration. This is non-negotiable and cannot be delegated to a nurse.\n\nNext step: Confirm with your medical director that their DEA registration is current before you finalize your service menu.' },
-      { id: 'osha', text: 'Complete OSHA compliance setup (BBP training, sharps disposal)', katrina: 'Med spas are medical facilities and subject to OSHA\'s Bloodborne Pathogen Standard. You need a written exposure control plan, annual BBP training for all staff, a sharps disposal contract, and proper PPE protocols. Budget $200–$500 for a compliance package.\n\nNext step: Purchase an OSHA med spa compliance kit from MedSpa Compliance Solutions or a similar vendor.' },
-      { id: 'hipaa', text: 'Implement HIPAA policies and Business Associate Agreements', katrina: 'Every vendor who touches your patient data (EMR, email platform, payment processor) needs a signed BAA. Your practice needs a written HIPAA policy, a designated Privacy Officer (can be you), and documented employee training. Non-compliance fines start at $100 per violation.\n\nNext step: Have your attorney draft a HIPAA compliance package or purchase one from a reputable healthcare compliance vendor.' },
+      { id: 'state-lic', text: 'Obtain state business license and medical spa permit', eugene: 'Requirements vary dramatically by state. Texas is relatively permissive; California and New York are heavily regulated. Your local health department may require an inspection before opening. This process takes 4–12 weeks in most states — start early.\n\nNext step: Go to your state medical board website today and download the med spa licensing checklist.' },
+      { id: 'dea', text: 'Confirm DEA registration for controlled substances (if applicable)', eugene: 'If your practice will use any controlled substances (certain topical anesthetics, weight loss medications), your medical director must have an active DEA registration. This is non-negotiable and cannot be delegated to a nurse.\n\nNext step: Confirm with your medical director that their DEA registration is current before you finalize your service menu.' },
+      { id: 'osha', text: 'Complete OSHA compliance setup (BBP training, sharps disposal)', eugene: 'Med spas are medical facilities and subject to OSHA\'s Bloodborne Pathogen Standard. You need a written exposure control plan, annual BBP training for all staff, a sharps disposal contract, and proper PPE protocols. Budget $200–$500 for a compliance package.\n\nNext step: Purchase an OSHA med spa compliance kit from MedSpa Compliance Solutions or a similar vendor.' },
+      { id: 'hipaa', text: 'Implement HIPAA policies and Business Associate Agreements', eugene: 'Every vendor who touches your patient data (EMR, email platform, payment processor) needs a signed BAA. Your practice needs a written HIPAA policy, a designated Privacy Officer (can be you), and documented employee training. Non-compliance fines start at $100 per violation.\n\nNext step: Have your attorney draft a HIPAA compliance package or purchase one from a reputable healthcare compliance vendor.' },
     ],
   },
   {
@@ -46,9 +46,9 @@ const PHASES = [
     title: 'Hiring & Training',
     color: '#F59E0B',
     items: [
-      { id: 'hire-np', text: 'Hire first injector (NP or PA with aesthetics experience)', katrina: 'Your first injector hire is the most important decision you\'ll make. You want 2+ years of aesthetics injecting experience (not just medical experience). Interview them with a patient consultation role-play — see how they close. Compensation: $85K–$110K base + 2–3% commission on revenue generated.\n\nNext step: Post on Indeed, Indeed Medical, and in aesthetics Facebook groups (Nurse Injectors Network is excellent).' },
-      { id: 'hire-fd', text: 'Hire front desk coordinator (aesthetics experience a plus)', katrina: 'Your front desk coordinator is your revenue driver. They book the appointments, handle objections, and close the rebook. Do not hire someone who just answers phones — hire someone who can sell an upgrade and book a follow-up before the patient walks out.\n\nNext step: In your job posting, require a role-play: "A patient calls asking for Botox pricing and says they\'ll call back. What do you say?" The answer will tell you everything.' },
-      { id: 'training', text: 'Complete provider training on all services offered', katrina: 'Every provider who injects must be certified on every product and device they use. Allergan, Galderma, and Revance all offer training programs. For devices, require factory training as part of your equipment purchase negotiation.\n\nNext step: Before your first patient, schedule a team "soft launch" day — treat each other for free to work out protocol kinks.' },
+      { id: 'hire-np', text: 'Hire first injector (NP or PA with aesthetics experience)', eugene: 'Your first injector hire is the most important decision you\'ll make. You want 2+ years of aesthetics injecting experience (not just medical experience). Interview them with a patient consultation role-play — see how they close. Compensation: $85K–$110K base + 2–3% commission on revenue generated.\n\nNext step: Post on Indeed, Indeed Medical, and in aesthetics Facebook groups (Nurse Injectors Network is excellent).' },
+      { id: 'hire-fd', text: 'Hire front desk coordinator (aesthetics experience a plus)', eugene: 'Your front desk coordinator is your revenue driver. They book the appointments, handle objections, and close the rebook. Do not hire someone who just answers phones — hire someone who can sell an upgrade and book a follow-up before the patient walks out.\n\nNext step: In your job posting, require a role-play: "A patient calls asking for Botox pricing and says they\'ll call back. What do you say?" The answer will tell you everything.' },
+      { id: 'training', text: 'Complete provider training on all services offered', eugene: 'Every provider who injects must be certified on every product and device they use. Allergan, Galderma, and Revance all offer training programs. For devices, require factory training as part of your equipment purchase negotiation.\n\nNext step: Before your first patient, schedule a team "soft launch" day — treat each other for free to work out protocol kinks.' },
     ],
   },
   {
@@ -56,10 +56,10 @@ const PHASES = [
     title: 'Marketing & Launch',
     color: '#EC4899',
     items: [
-      { id: 'brand', text: 'Finalize brand identity (logo, colors, tone of voice)', katrina: 'Your brand is not your logo — it\'s the feeling a patient gets the moment they walk in. But yes, get a good logo ($500–$2,000 from a designer who knows the aesthetics space). Colors: avoid the standard pink-and-gold med spa look. Differentiate.\n\nNext step: Define 3 adjectives your brand should make patients feel. Build everything from there.' },
-      { id: 'website', text: 'Launch website with online booking and before/after gallery', katrina: 'You need a website before you open. Minimum requirements: online booking (connect your EMR), before/after photo gallery (with consent), service menu with pricing, provider bios, and a strong Google Maps listing.\n\nNext step: Do NOT spend $15K on a custom website at launch. Use a Wix or Squarespace med spa template for $20/month — upgrade when revenue supports it.' },
-      { id: 'google', text: 'Set up Google Business Profile and run local ads', katrina: 'Google Business Profile is free and generates a significant portion of organic discovery for local med spas. Complete every field, add photos weekly, and respond to every review within 24 hours. Then run Google Local Services Ads — they convert at 3–5x the rate of Facebook for med spas.\n\nNext step: Claim and completely fill out your Google Business Profile today. It takes 30 minutes and it\'s free.' },
-      { id: 'promo', text: 'Plan grand opening event or VIP preview night', katrina: 'Grand opening events generate your first cluster of reviews and create community buzz. Invite your personal network (friends, family, local business owners), offer complimentary consultations, and have a photographer on-site for content. Set a goal of 20 Google reviews from the event.\n\nNext step: Plan your preview event 2 weeks before you open to the public. Start a list of 50 people to personally invite.' },
+      { id: 'brand', text: 'Finalize brand identity (logo, colors, tone of voice)', eugene: 'Your brand is not your logo — it\'s the feeling a patient gets the moment they walk in. But yes, get a good logo ($500–$2,000 from a designer who knows the aesthetics space). Colors: avoid the standard pink-and-gold med spa look. Differentiate.\n\nNext step: Define 3 adjectives your brand should make patients feel. Build everything from there.' },
+      { id: 'website', text: 'Launch website with online booking and before/after gallery', eugene: 'You need a website before you open. Minimum requirements: online booking (connect your EMR), before/after photo gallery (with consent), service menu with pricing, provider bios, and a strong Google Maps listing.\n\nNext step: Do NOT spend $15K on a custom website at launch. Use a Wix or Squarespace med spa template for $20/month — upgrade when revenue supports it.' },
+      { id: 'google', text: 'Set up Google Business Profile and run local ads', eugene: 'Google Business Profile is free and generates a significant portion of organic discovery for local med spas. Complete every field, add photos weekly, and respond to every review within 24 hours. Then run Google Local Services Ads — they convert at 3–5x the rate of Facebook for med spas.\n\nNext step: Claim and completely fill out your Google Business Profile today. It takes 30 minutes and it\'s free.' },
+      { id: 'promo', text: 'Plan grand opening event or VIP preview night', eugene: 'Grand opening events generate your first cluster of reviews and create community buzz. Invite your personal network (friends, family, local business owners), offer complimentary consultations, and have a photographer on-site for content. Set a goal of 20 Google reviews from the event.\n\nNext step: Plan your preview event 2 weeks before you open to the public. Start a list of 50 people to personally invite.' },
     ],
   },
 ]
@@ -79,7 +79,7 @@ const STARTUP_COSTS = [
 export default function LaunchCenter() {
   const [checked, setChecked] = useState({})
   const [expanded, setExpanded] = useState({ 0: true })
-  const [katrinaModal, setKatrinaModal] = useState(null)
+  const [eugeneModal, setEugeneModal] = useState(null)
   const [showCostCalc, setShowCostCalc] = useState(false)
   const [costMultiplier, setCostMultiplier] = useState(1)
 
@@ -201,11 +201,11 @@ export default function LaunchCenter() {
                         </p>
                       </div>
                       <button
-                        onClick={() => setKatrinaModal(item)}
+                        onClick={() => setEugeneModal(item)}
                         className="flex items-center gap-1.5 text-xs text-indigo-600 hover:text-indigo-500 font-semibold transition-colors flex-shrink-0 mt-0.5"
                       >
                         <MessageCircle size={13} />
-                        Ask Katrina
+                        Ask Eugene
                       </button>
                     </motion.div>
                   ))}
@@ -216,19 +216,19 @@ export default function LaunchCenter() {
         })}
       </div>
 
-      {/* Katrina Modal */}
-      <Modal isOpen={!!katrinaModal} onClose={() => setKatrinaModal(null)} title="Katrina's CFO Guidance" size="md">
-        {katrinaModal && (
+      {/* Eugene Modal */}
+      <Modal isOpen={!!eugeneModal} onClose={() => setEugeneModal(null)} title="Eugene's CFO Guidance" size="md">
+        {eugeneModal && (
           <div className="space-y-4">
             <div className="p-3 rounded-xl bg-indigo-50 border border-indigo-100 shadow-sm">
-              <p className="text-sm font-semibold text-navy-950">{katrinaModal.text}</p>
+              <p className="text-sm font-semibold text-navy-950">{eugeneModal.text}</p>
             </div>
             <div className="flex items-start gap-3">
               <div className="w-8 h-8 rounded-full primary-gradient flex items-center justify-center flex-shrink-0">
-                <span className="font-display font-bold text-white text-xs">K</span>
+                <span className="font-display font-bold text-white text-xs">E</span>
               </div>
               <div className="text-sm text-gray-700 leading-relaxed font-body whitespace-pre-line font-medium">
-                {katrinaModal.katrina}
+                {eugeneModal.eugene}
               </div>
             </div>
           </div>

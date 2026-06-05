@@ -5,7 +5,7 @@ import useAuthStore from './store/useAuthStore'
 
 // Pages
 import Dashboard from './pages/Dashboard'
-import AskKatrina from './pages/AskKatrina'
+import AskEugene from './pages/AskEugene'
 import HealthScore from './pages/HealthScore'
 import FinancialKPI from './pages/FinancialKPI'
 import LaunchCenter from './pages/LaunchCenter'
@@ -28,7 +28,7 @@ function AuthGuard({ children }) {
 
 const PAGE_TITLES = {
   '/': { title: 'Dashboard', subtitle: 'Welcome back to your intelligence platform' },
-  '/ask': { title: 'Ask Katrina', subtitle: 'Your AI Fractional CFO & operational advisor, available 24/7' },
+  '/ask': { title: 'Ask Eugene', subtitle: 'Your AI Fractional CFO & operational advisor, available 24/7' },
   '/health-score': { title: 'Health Score', subtitle: 'Diagnostic report for your practice' },
   '/financial': { title: 'Financial & KPIs', subtitle: 'Real-time performance metrics' },
   '/launch': { title: 'Launch Center', subtitle: 'Your step-by-step launch roadmap' },
@@ -49,7 +49,7 @@ const PAGE_TITLES = {
 
 function AppRoutes() {
   const location = useLocation()
-  const pageInfo = PAGE_TITLES[location.pathname] || { title: 'Katrina\'s AI', subtitle: '' }
+  const pageInfo = PAGE_TITLES[location.pathname] || { title: 'Eugene\'s AI', subtitle: '' }
 
   return (
     <Routes location={location}>
@@ -62,7 +62,7 @@ function AppRoutes() {
         }
       >
         <Route path="/" element={<Dashboard />} />
-        <Route path="/ask" element={<AskKatrina />} />
+        <Route path="/ask" element={<AskEugene />} />
         <Route path="/health-score" element={<HealthScore />} />
         <Route path="/health-score/report" element={<HealthScore showReport />} />
         <Route path="/financial" element={<FinancialKPI />} />
